@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-import { useNavigate} from 'react-router-dom';
-
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'http://localhost:5002/api';
 
 function SignupLogin({ defaultTab = "signup" }) {
     const navigate = useNavigate();
-
-
     const [isLoginView, setIsLoginView] = useState(defaultTab === "login");
-
     const [showForgotPasswordForm, setShowForgotPasswordForm] = useState(false);
     const [showResetPasswordForm, setShowResetPasswordForm] = useState(false);
     const [resetEmail, setResetEmail] = useState('');
@@ -22,18 +18,21 @@ function SignupLogin({ defaultTab = "signup" }) {
     const [showSignupOTPPage, setShowSignupOTPPage] = useState(false);
     const [message, setMessage] = useState('');
     const [resendCooldown, setResendCooldown] = useState(0);
-
     const [weatherData, setWeatherData] = useState(null);
     const [userCity, setUserCity] = useState('');
 
+    // --- START OF CORRECTION 1: useEffect ---
+    // Updated to read from 'userInfo' which is the correct shared key
     useEffect(() => {
-        const storedUser = JSON.parse(localStorage.getItem('currentUser'));
-        const city = storedUser?.city || localStorage.getItem('signupCity');
+        const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+        // Get the city from the 'user' object *inside* userInfo
+        const city = storedUserInfo?.user?.city || localStorage.getItem('signupCity');
+
         if (city) {
             setUserCity(city);
             const fetchWeather = async () => {
                 try {
-                    const apiKey = process.env.WEATHER_API_KEY;
+                    const apiKey = 'ef652dd7f8c85f6eba1ecb4dc26a9fe4'; // Note: Consider moving API keys to .env
                     const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
                     const { temp } = response.data.main;
                     const description = response.data.weather[0].description;
@@ -45,6 +44,7 @@ function SignupLogin({ defaultTab = "signup" }) {
             fetchWeather();
         }
     }, []);
+    // --- END OF CORRECTION 1 ---
 
     useEffect(() => {
         if (resendCooldown > 0) {
@@ -94,25 +94,23 @@ function SignupLogin({ defaultTab = "signup" }) {
         }
     };
 
-    // --- START OF MODIFIED sendSignupOTP FUNCTION ---
     const sendSignupOTP = async () => {
         if (!form.email) {
             setMessage('Please enter your email address first.');
-            return false; // Indicate failure
+            return false;
         }
         try {
             setMessage('Sending OTP for signup...');
             const { data } = await axios.post(`${API_BASE_URL}/send-otp`, { email: form.email });
             setMessage(data.message);
             setResendCooldown(30);
-            return true; // Indicate success
+            return true;
         } catch (err) {
             const errorMsg = err.response?.data?.message || 'Failed to send OTP. Please try again later.';
             setMessage(errorMsg);
-            return false; // Indicate failure
+            return false;
         }
     };
-    // --- END OF MODIFIED sendSignupOTP FUNCTION ---
 
     const sendResetOTP = async () => {
         if (!resetEmail) {
@@ -130,6 +128,7 @@ function SignupLogin({ defaultTab = "signup" }) {
             setMessage(err.response?.data?.message || 'Failed to send reset OTP. Please try again later.');
         }
     };
+
     const handleSignup = async () => {
         if (form.password !== form.confirmPassword) {
             setMessage("Passwords do not match.");
@@ -146,7 +145,7 @@ function SignupLogin({ defaultTab = "signup" }) {
                 email: form.email,
                 password: form.password,
                 confirmPassword: form.confirmPassword,
-                city: form.district,
+                city: form.district, // Sending 'district' as 'city'
                 state: form.state,
                 pincode: form.pincode,
                 otp: form.otp
@@ -157,29 +156,78 @@ function SignupLogin({ defaultTab = "signup" }) {
             resetFormStates();
             setIsLoginView(true);
             setForm(prev => ({ ...prev, email: registeredEmail }));
-            setMessage("✅ Signup successful! Please log in to continue."); // FIX 1 applied here
+            setMessage("✅ Signup successful! Please log in to continue.");
         } catch (err) {
             setMessage(err.response?.data?.message || "An unexpected error occurred during signup.");
         }
     };
+
+    // --- START OF CORRECTION 2: handleLogin ---
     const handleLogin = async () => {
         if (!form.email || !form.password) {
             setMessage("Please enter both email and password.");
             return;
         }
+
+        // --- Check for Admin Credentials ---
+        if (form.email === 'admin@gmail.com') {
+            try {
+                setMessage('Verifying admin credentials...');
+                const response = await fetch(`${API_BASE_URL}/shop/admin/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: form.email, password: form.password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    setMessage("Admin login successful. Redirecting...");
+                    localStorage.setItem('adminLoggedIn', 'true');
+                    // Clear user info to prevent conflict
+                    localStorage.removeItem('userInfo');
+                    setTimeout(() => {
+                        navigate('/admin');
+                    }, 1000);
+                    return;
+                } else {
+                    setMessage(data.message || "Admin login failed.");
+                    return;
+                }
+            } catch (error) {
+                setMessage("Failed to connect to admin server.");
+                return;
+            }
+        }
+
         try {
             setMessage('Logging in...');
             const { data } = await axios.post(`${API_BASE_URL}/login`, { email: form.email, password: form.password });
-            setMessage(data.message + " Redirecting to dashboard...");
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('currentUser', JSON.stringify(data.user));
-            navigate('/'); // FIX 2: Standard react-router-dom navigation.
-                               // If you are using a custom navigation function like 'onNavigate',
-                               // replace 'navigate('/home')' with 'onNavigate('home')'.
+            setMessage(data.message + " Redirecting...");
+
+            // This is the correct object structure that Page.jsx expects
+            const userInfo = {
+                user: data.user,  // data.user must be { _id, name, email, city, ... }
+                token: data.token
+            };
+
+            // Save the *single* item 'userInfo'
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+            // Remove the old, incorrect items just in case
+            localStorage.removeItem('token');
+            localStorage.removeItem('currentUser');
+            localStorage.removeItem('adminLoggedIn'); // Ensure admin is logged out
+
+            navigate('/'); // Navigate to the shop page
         } catch (err) {
             setMessage(err.response?.data?.message || "Login failed. Please check your email and password.");
         }
     };
+    // --- END OF CORRECTION 2 ---
+
     const handleResetPassword = async () => {
         if (form.password !== form.confirmPassword) {
             setMessage("New passwords do not match.");
@@ -205,6 +253,7 @@ function SignupLogin({ defaultTab = "signup" }) {
             setMessage(err.response?.data?.message || "Failed to reset password. Please try again.");
         }
     };
+
     const resetFormStates = () => {
         setForm({ name: '', email: '', password: '', confirmPassword: '', pincode: '', country: '', state: '', district: '', otp: '' });
         setDropdowns({ countries: [], states: [], districts: [] });
@@ -225,7 +274,6 @@ function SignupLogin({ defaultTab = "signup" }) {
         <div className="form-content">
             <h4 className="form-title">Welcome Back!</h4>
             <p className="form-subtitle">Log in to access your garden dashboard.</p>
-
             <div className="form-group-full">
                 <label className="form-label">Email</label>
                 <input
@@ -237,7 +285,6 @@ function SignupLogin({ defaultTab = "signup" }) {
                     value={form.email}
                 />
             </div>
-
             <div className="form-group-full">
                 <label className="form-label">Password</label>
                 <input
@@ -249,14 +296,12 @@ function SignupLogin({ defaultTab = "signup" }) {
                     value={form.password}
                 />
             </div>
-
             <button
                 className="form-button"
                 onClick={handleLogin}
             >
                 Log In
             </button>
-
             <div className="form-footer">
                 <button className="form-link"
                     onClick={(e) => {
@@ -272,13 +317,13 @@ function SignupLogin({ defaultTab = "signup" }) {
             </div>
         </div>
     );
+
     const renderSignupForm = () => (
         <>
             {showSignupOTPPage ? renderSignupOTPForm() : (
                 <div className="form-content">
                     <h4 className="form-title">Create an Account</h4>
                     <p className="form-subtitle">Join Growlify AI to start your smart garden.</p>
-
                     <div className="form-group-full">
                         <label className="form-label">Full Name</label>
                         <input
@@ -387,15 +432,13 @@ function SignupLogin({ defaultTab = "signup" }) {
                             </select>
                         </div>
                     </div>
-
-                    {/* --- START OF MODIFIED BUTTON LOGIC --- */}
                     <button
                         className="form-button"
-                        onClick={async () => { // Made async to await sendSignupOTP
+                        onClick={async () => {
                             if (form.name && form.email && form.password && form.confirmPassword && form.pincode && form.district && form.password === form.confirmPassword) {
-                                const success = await sendSignupOTP(); // Await OTP send result
+                                const success = await sendSignupOTP();
                                 if (success) {
-                                    setShowSignupOTPPage(true); // Only proceed if OTP sent successfully
+                                    setShowSignupOTPPage(true);
                                 }
                             } else {
                                 setMessage('Please fill all required fields and ensure passwords match before proceeding.');
@@ -404,16 +447,15 @@ function SignupLogin({ defaultTab = "signup" }) {
                     >
                         Proceed to Verification
                     </button>
-                    {/* --- END OF MODIFIED BUTTON LOGIC --- */}
                 </div>
             )}
         </>
     );
+
     const renderSignupOTPForm = () => (
         <div className="form-content">
             <h5 className="form-title">Email Verification</h5>
             <p className="form-subtitle">Enter the 6-digit OTP sent to <br /><b className="form-strong">{form.email}</b></p>
-
             <div className="form-group-full">
                 <label className="form-label">Enter OTP</label>
                 <input
@@ -425,14 +467,12 @@ function SignupLogin({ defaultTab = "signup" }) {
                     value={form.otp}
                 />
             </div>
-
             <button
                 className="form-button"
                 onClick={handleSignup}
             >
                 Verify & Create Account
             </button>
-
             <div className="form-footer-multi">
                 <button
                     className="form-link"
@@ -450,11 +490,11 @@ function SignupLogin({ defaultTab = "signup" }) {
             </div>
         </div>
     );
+
     const renderForgotPasswordForm = () => (
         <div className="form-content">
             <h5 className="form-title">Forgot Password?</h5>
             <p className="form-subtitle">Enter your email to receive a password reset OTP.</p>
-
             <div className="form-group-full">
                 <label className="form-label">Email</label>
                 <input
@@ -466,14 +506,12 @@ function SignupLogin({ defaultTab = "signup" }) {
                     value={resetEmail}
                 />
             </div>
-
             <button
                 className="form-button"
                 onClick={sendResetOTP}
             >
                 Send Reset OTP
             </button>
-
             <div className="form-footer">
                 <button
                     className="form-link-secondary"
@@ -489,11 +527,11 @@ function SignupLogin({ defaultTab = "signup" }) {
             </div>
         </div>
     );
+
     const renderResetPasswordForm = () => (
         <div className="form-content">
             <h5 className="form-title">Reset Your Password</h5>
             <p className="form-subtitle">Enter the OTP sent to <br /><b className="form-strong">{resetEmail}</b> and your new password.</p>
-
             <div className="form-group-full">
                 <label className="form-label">Enter OTP</label>
                 <input
@@ -505,7 +543,6 @@ function SignupLogin({ defaultTab = "signup" }) {
                     value={form.otp}
                 />
             </div>
-
             <div className="form-group-full">
                 <label className="form-label">New Password</label>
                 <input
@@ -517,7 +554,6 @@ function SignupLogin({ defaultTab = "signup" }) {
                     value={form.password}
                 />
             </div>
-
             <div className="form-group-full">
                 <label className="form-label">Confirm New Password</label>
                 <input
@@ -529,14 +565,12 @@ function SignupLogin({ defaultTab = "signup" }) {
                     value={form.confirmPassword}
                 />
             </div>
-
             <button
                 className="form-button"
                 onClick={handleResetPassword}
             >
                 Reset Password
             </button>
-
             <div className="form-footer-multi">
                 <button
                     className="form-link"
@@ -561,18 +595,14 @@ function SignupLogin({ defaultTab = "signup" }) {
 
     const getPasswordStrength = (password) => {
         if (!password) return { label: '', color: '' };
-
         const lengthOK = password.length >= 8;
         const hasUpper = /[A-Z]/.test(password);
         const hasNumber = /\d/.test(password);
         const hasSpecial = /[@$!%*?&]/.test(password);
-
         const passedChecks = [lengthOK, hasUpper, hasNumber, hasSpecial].filter(Boolean).length;
-
         if (passedChecks <= 1) return { label: 'Weak', color: 'red' };
         if (passedChecks === 2 || passedChecks === 3) return { label: 'Fair', color: 'orange' };
         if (passedChecks === 4) return { label: 'Strong', color: 'green' };
-
         return { label: '', color: '' };
     };
 
@@ -582,8 +612,8 @@ function SignupLogin({ defaultTab = "signup" }) {
                 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
                 :root {
-                    --bg-page: #F5F5DC; /* Changed page background to beige */
-                    --bg-card: #f7f7e3; /* Kept card background white */
+                    --bg-page: #F5F5DC;
+                    --bg-card: #f7f7e3;
                     --bg-input: rgb(219,219,189);
                     --brand-green: #3B873E;
                     --brand-green-darker: #306C32;
@@ -596,7 +626,6 @@ function SignupLogin({ defaultTab = "signup" }) {
                     --success-bg: #D1FAE5;
                     --success-text: #065F46;
                 }
-
                 .signup-login-container {
                     font-family: 'Inter', sans-serif;
                     background-color: var(--bg-page);
@@ -767,12 +796,10 @@ function SignupLogin({ defaultTab = "signup" }) {
                     text-align: center;
                     font-weight: 500;
                 }
-
                 .message-alert.error {
                     background-color: var(--error-bg);
                     color: var(--error-text);
                 }
-
                 .message-alert.success {
                     background-color: var(--success-bg);
                     color: var(--success-text);
@@ -788,7 +815,6 @@ function SignupLogin({ defaultTab = "signup" }) {
             `}</style>
 
             <div className="card-wrapper mt-4">
-
                 {/* 🌦️ Weather Display */}
                 {userCity && weatherData && (
                     <div style={{
@@ -825,13 +851,12 @@ function SignupLogin({ defaultTab = "signup" }) {
 
                 {/* Message Display */}
                 {message && (
-                  <div className={`message-alert ${
-                    /(fail|invalid|error|already|not match|please|required|expired|incorrect|exist)/i.test(message)
-                      ? 'error'
-                      : 'success'
-                  }`}>
-                    {message}
-                  </div>
+                    <div className={`message-alert ${/(fail|invalid|error|already|not match|please|required|expired|incorrect|exist)/i.test(message)
+                        ? 'error'
+                        : 'success'
+                        }`}>
+                        {message}
+                    </div>
                 )}
 
                 {/* Render Form */}

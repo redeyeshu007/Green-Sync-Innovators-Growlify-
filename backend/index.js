@@ -1,66 +1,46 @@
+// Load environment variables immediately
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
+const logger = require('./utils/logger');
+
+// Import Routes
 const authRoutes = require('./routes/authRoutes');
 const plantRoutes = require('./routes/plantRoutes');
 const shopRoutes = require('./routes/shopRoutes');
-require('dotenv').config();
+const postRoutes = require('./routes/postRoutes');
+const rewardRoutes = require('./routes/rewardRoutes');
+const { submitContactForm } = require('./controllers/contactController');
+
+// Initialize Schedulers
 require('./schedulers/cronJobs');
 
-const nodemailer = require('nodemailer');
-const logger = require('./utils/logger'); // ✅ Import logger 
-
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5002;
 
-// ✅ Connect to MongoDB
+// --- Database Connection ---
 if (connectDB) {
-  connectDB();
-  logger.info('✅ MongoDB connected successfully');
+    connectDB();
+    logger.info('✅ MongoDB connected successfully');
 }
 
+// --- Middleware ---
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
-// ✅ API Routes
+// --- API Routes ---
 app.use('/api', authRoutes);
 app.use('/api/plants', plantRoutes);
 app.use('/api/shop', shopRoutes);
+app.use('/api/posts', postRoutes);
+app.use('/api/rewards', rewardRoutes);
 
-// ✅ Contact form endpoint
-app.post('/contact', async (req, res) => {
-  const { fullName, emailAddress, message } = req.body;
+// --- Public Routes ---
+app.post('/contact', submitContactForm);
 
-  if (!fullName || !emailAddress || !message) {
-    logger.error('❌ Contact form submission failed: missing fields');
-    return res.status(400).json({ message: 'All fields are required' });
-  }
-
-  try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"${fullName}" <${emailAddress}>`,
-      to: process.env.EMAIL_USER,
-      subject: `🌱 New Contact from ${fullName}`,
-      html: `<p><strong>Email:</strong> ${emailAddress}</p><p>${message}</p>`,
-    });
-
-    logger.info(`📩 Contact email received from ${emailAddress} by ${fullName}`);
-    res.status(200).json({ message: 'Message sent successfully!' });
-  } catch (err) {
-    logger.error(`❌ Email sending failed from ${emailAddress}: ${err.message}`);
-    res.status(500).json({ message: 'Failed to send message' });
-  }
-});
-
-// ✅ Server start
+// --- Server Start ---
 app.listen(PORT, () => {
-  logger.info(`🌿 Growlify backend running on http://localhost:${PORT}`);
+    logger.info(`🌿 Growlify backend running on http://localhost:${PORT}`);
 });

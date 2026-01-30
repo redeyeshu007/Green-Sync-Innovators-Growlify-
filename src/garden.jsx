@@ -1,15 +1,98 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import { Sprout, Plus, GitBranch, Grid3x3, XCircle, Sun } from 'lucide-react';
+import { Sprout, Plus, GitBranch, Grid3x3, XCircle, Sun, CloudRain, Snowflake, Calendar, Sparkles } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 // Base URL for your backend API - IMPORTANT: Ensure this is correct!
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'http://localhost:5002/api';
 
-// Function to get the JWT token from localStorage
+// 🌟 FIX: Function to get the JWT token from the 'userInfo' object in localStorage
 const getAuthToken = () => {
-    return localStorage.getItem('token');
+    const userInfo = localStorage.getItem('userInfo');
+    if (userInfo) {
+        return JSON.parse(userInfo).token; // Get the token from the userInfo object
+    }
+    return null;
+};
+
+// 🌿 Plant suggestions data mapping by district
+// 🌿 Plant suggestions data mapping by district with SEASONAL info
+const PLANT_SUGGESTIONS = {
+    // Karnataka
+    'Bengaluru': [
+        { name: 'Hibiscus', reason: 'Thrives in moderate climate year-round.', seasons: ['All Year', 'Summer'] },
+        { name: 'Rose', reason: 'Loves the cool nights and warm days.', seasons: ['Winter', 'Spring', 'All Year'] },
+        { name: 'Marigold', reason: 'Grows easily with consistent sunshine.', seasons: ['Summer', 'Winter'] },
+        { name: 'Jasmine', reason: 'Flourishes in balanced rainfall.', seasons: ['Monsoon', 'Summer'] },
+        { name: 'Curry Leaf', reason: 'Native to South India, humid conditions.', seasons: ['All Year'] },
+        { name: 'Aloe Vera', reason: 'Hardy and thrives in Bengaluru weather.', seasons: ['All Year'] }
+    ],
+    // Tamil Nadu
+    'Chennai': [
+        { name: 'Bougainvillea', reason: 'Loves hot, dry conditions.', seasons: ['Summer', 'All Year'] },
+        { name: 'Tulsi', reason: 'Thrives in humid coastal heat.', seasons: ['All Year'] },
+        { name: 'Neem', reason: 'Handles intense sun and poor soil.', seasons: ['Summer', 'All Year'] },
+        { name: 'Coconut Palm', reason: 'Ideal for tropical, humid climate.', seasons: ['All Year'] },
+        { name: 'Plumeria', reason: 'Flourishes in hot weather.', seasons: ['Summer'] },
+        { name: 'Jasmine', reason: 'Perfect for the warm climate.', seasons: ['Summer', 'Monsoon'] }
+    ],
+    // Maharashtra
+    'Mumbai': [
+        { name: 'Money Plant', reason: 'Grows well in humid air.', seasons: ['All Year', 'Monsoon'] },
+        { name: 'Areca Palm', reason: 'Thrives in tropical humidity.', seasons: ['All Year'] },
+        { name: 'Spider Lily', reason: 'Loves heavy monsoon rains.', seasons: ['Monsoon'] },
+        { name: 'Hibiscus', reason: 'Suited for warm, tropical climate.', seasons: ['All Year'] },
+        { name: 'Tulsi', reason: 'Grows easily in warm, humid conditions.', seasons: ['All Year'] },
+        { name: 'Ferns', reason: 'Loves the coastal humidity.', seasons: ['Monsoon', 'All Year'] }
+    ],
+    // Delhi NCR
+    'Delhi': [
+        { name: 'Petunia', reason: 'Perfect for cool winters.', seasons: ['Winter'] },
+        { name: 'Bougainvillea', reason: 'Handles extreme summers.', seasons: ['Summer', 'Monsoon'] },
+        { name: 'Marigold', reason: 'Hardy plant for varying weather.', seasons: ['Winter', 'Summer'] },
+        { name: 'Gulmohar', reason: 'Blooms beautifully in hot summers.', seasons: ['Summer'] },
+        { name: 'Aloe Vera', reason: 'Drought-tolerant for dry periods.', seasons: ['All Year'] },
+        { name: 'Chrysanthemum', reason: 'Ideal for winter months.', seasons: ['Winter'] }
+    ],
+    // Default fallback
+    'default': [
+        { name: 'Tulsi (Holy Basil)', reason: 'Grows well in most climates.', seasons: ['All Year'] },
+        { name: 'Marigold', reason: 'Hardy and adapts to various soils.', seasons: ['Winter', 'Summer'] },
+        { name: 'Hibiscus', reason: 'Thrives in tropical climates.', seasons: ['All Year'] },
+        { name: 'Aloe Vera', reason: 'Low maintenance succulent.', seasons: ['All Year'] },
+        { name: 'Curry Leaf', reason: 'Native and grows with good sun.', seasons: ['All Year'] },
+        { name: 'Snake Plant', reason: 'Extremely hardy and air-purifying.', seasons: ['All Year'] }
+    ]
+};
+
+// --- HELPER FUNCTIONS ---
+
+// 1. Get Current Indian Season
+const getIndianSeason = () => {
+    const month = new Date().getMonth(); // 0 = Jan, 11 = Dec
+    if (month === 0 || month === 1) return 'Winter';
+    if (month >= 2 && month <= 5) return 'Summer';
+    if (month >= 6 && month <= 9) return 'Monsoon';
+    return 'Post-Monsoon'; // Oct-Dec
+};
+
+// 2. Fetch Image from Pixabay (Placeholder Key)
+const fetchPlantImage = async (plantName) => {
+    // ⚠️ REPLACE THIS WITH YOUR OWN FREE PIXABAY API KEY ⚠️
+    // Get one here: https://pixabay.com/api/docs/
+    const PIXABAY_API_KEY = '54429712-336b53a7fbfc4665f8b5e29cd';
+    const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1470&auto=format&fit=crop';
+
+    try {
+        const response = await axios.get(`https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${encodeURIComponent(plantName + ' plant')}&image_type=photo&per_page=3`);
+        if (response.data.hits && response.data.hits.length > 0) {
+            return response.data.hits[0].webformatURL;
+        }
+    } catch (error) {
+        console.warn(`Could not fetch image for ${plantName}, using fallback.`);
+    }
+    return FALLBACK_IMAGE;
 };
 
 // Removed onNavigate prop from GardenPage as it will use useNavigate internally
@@ -28,13 +111,24 @@ function GardenPage() {
     const [userCity, setUserCity] = useState('');
 
     useEffect(() => {
-        const storedUser = JSON.parse(localStorage.getItem('currentUser'));
-        const city = storedUser?.city || localStorage.getItem('signupCity');
+        // 🌟 FIX: Read from 'userInfo' which is what login saves
+        const storedUserInfo = localStorage.getItem('userInfo');
+        let city = '';
+        if (storedUserInfo) {
+            const { user } = JSON.parse(storedUserInfo);
+            city = user?.city;
+        }
+
+        // Fallback for older data if it exists
+        if (!city) {
+            city = localStorage.getItem('signupCity');
+        }
+
         if (city) {
             setUserCity(city);
             const fetchWeather = async () => {
                 try {
-                    const apiKey = process.env.WEATHER_API_KEY;
+                    const apiKey = 'ef652dd7f8c85f6eba1ecb4dc26a9fe4';
                     const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
                     const { temp } = response.data.main;
                     const description = response.data.weather[0].description;
@@ -61,13 +155,13 @@ function GardenPage() {
             if (!token) {
                 setError('Kindly Signup / Login Your Account Before adding a Plant ');
                 setLoading(false);
-                // Use navigate for redirection to auth page
                 // navigate('/auth'); // Uncomment if you want immediate redirection
                 return;
             }
+            // 🌟 FIX: Use standard Authorization header
             const response = await axios.get(`${API_BASE_URL}/plants`, {
                 headers: {
-                    'x-auth-token': token
+                    'Authorization': `Bearer ${token}`
                 }
             });
             setPlants(response.data);
@@ -75,8 +169,8 @@ function GardenPage() {
             console.error('Error fetching plants:', err);
             if (err.response && err.response.status === 401) {
                 setError('Session expired. Please log in again.');
-                localStorage.removeItem('token'); // Clear invalid token
-                localStorage.removeItem('currentUser');
+                localStorage.removeItem('userInfo'); // 🌟 FIX: Remove 'userInfo' on auth error
+                localStorage.removeItem('currentUser'); // Keep this for cleanup
                 navigate('/auth'); // Navigate to login/signup page
             } else {
                 setError('Failed to load your garden. Please try again.');
@@ -100,9 +194,10 @@ function GardenPage() {
                 navigate('/auth'); // Navigate to login/signup page
                 return;
             }
+            // 🌟 FIX: Use standard Authorization header
             const response = await axios.post(`${API_BASE_URL}/plants`, plantData, {
                 headers: {
-                    'x-auth-token': token
+                    'Authorization': `Bearer ${token}`
                 }
             });
             console.log('Plant added successfully:', response.data);
@@ -142,9 +237,10 @@ function GardenPage() {
                 navigate('/auth'); // Navigate to login/signup page
                 return;
             }
+            // 🌟 FIX: Use standard Authorization header
             await axios.delete(`${API_BASE_URL}/plants/${plantToDelete}`, {
                 headers: {
-                    'x-auth-token': token
+                    'Authorization': `Bearer ${token}`
                 }
             });
             console.log('Plant deleted successfully:', plantToDelete);
@@ -327,6 +423,9 @@ function GardenPage() {
                     </div>
                 ) : (
                     <>
+                        {/* Plant Suggestions - shown on overview page */}
+                        {page === 'overview' && userCity && <PlantSuggestions userCity={userCity} />}
+
                         {/* Pass navigate to GardenOverview for the Diagnose button */}
                         {page === 'overview' && <GardenOverview plants={plants} onNavigate={setPage} onViewDetails={handleViewDetails} onDiagnoseClick={() => navigate('/diagnose')} />}
                         {page === 'addPlant' && <AddPlantForm addPlant={addPlant} />}
@@ -513,6 +612,181 @@ const AddPlantForm = ({ addPlant }) => {
                         <p className="mb-4">Please fill in all required fields (Plant Name, Location, Watering).</p>
                         <button className="btn btn-primary" onClick={() => setShowErrorModal(false)}>Got It</button>
                     </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+// 🌿 Plant Suggestions Component - Compact & Enhanced with Shiny Seasonal Badges
+const PlantSuggestions = ({ userCity }) => {
+    const [recommendations, setRecommendations] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [currentSeason, setCurrentSeason] = useState('');
+
+    // Helper for Season Badges
+    const getSeasonStyle = (season) => {
+        switch (season) {
+            case 'Summer': return { icon: <Sun size={10} strokeWidth={3} />, color: 'bg-warning-subtle text-warning border-warning-subtle' };
+            case 'Winter': return { icon: <Snowflake size={10} strokeWidth={3} />, color: 'bg-info-subtle text-info border-info-subtle' };
+            case 'Monsoon': return { icon: <CloudRain size={10} strokeWidth={3} />, color: 'bg-primary-subtle text-primary border-primary-subtle' };
+            case 'All Year': return { icon: <Calendar size={10} strokeWidth={3} />, color: 'bg-success-subtle text-success border-success-subtle' };
+            case 'Spring': return { icon: <Sprout size={10} strokeWidth={3} />, color: 'bg-danger-subtle text-danger border-danger-subtle' };
+            default: return { icon: <Sprout size={10} strokeWidth={3} />, color: 'bg-secondary-subtle text-secondary border-secondary-subtle' };
+        }
+    };
+
+    useEffect(() => {
+        const loadSuggestions = async () => {
+            setLoading(true);
+            const season = getIndianSeason();
+            setCurrentSeason(season);
+
+            // 1. Get raw suggestions
+            let rawPlants = [];
+            if (PLANT_SUGGESTIONS[userCity]) {
+                rawPlants = PLANT_SUGGESTIONS[userCity];
+            } else {
+                const cityLower = userCity.toLowerCase();
+                const matchedKey = Object.keys(PLANT_SUGGESTIONS).find(key => key.toLowerCase() === cityLower);
+                rawPlants = matchedKey ? PLANT_SUGGESTIONS[matchedKey] : PLANT_SUGGESTIONS['default'];
+            }
+
+            // 2. Filter/Prioritize by Season
+            const sortedPlants = [...rawPlants].sort((a, b) => {
+                const aMatch = a.seasons.includes(season);
+                const bMatch = b.seasons.includes(season);
+                const aAllYear = a.seasons.includes('All Year'); // Prioritize All Year too 
+                const bAllYear = b.seasons.includes('All Year');
+
+                if (aMatch && !bMatch) return -1;
+                if (!aMatch && bMatch) return 1;
+                // Secondary sort: All Year vs others if both match (or don't match) season
+                if (aAllYear && !bAllYear) return -1;
+                if (!aAllYear && bAllYear) return 1;
+                return 0;
+            });
+
+            // Take top 6
+            const topPlants = sortedPlants.slice(0, 6);
+
+            // 3. Fetch Images
+            const plantsWithImages = await Promise.all(topPlants.map(async (plant) => {
+                const imageUrl = await fetchPlantImage(plant.name);
+                return { ...plant, imageUrl };
+            }));
+
+            setRecommendations(plantsWithImages);
+            setLoading(false);
+        };
+
+        if (userCity) {
+            loadSuggestions();
+        }
+    }, [userCity]);
+
+    if (!userCity) return null;
+
+    const currentSeasonStyle = getSeasonStyle(currentSeason);
+
+    return (
+        <div className="container mt-4 mb-4 px-3">
+            {/* Headers - Compact with Shiny Badge */}
+            <div className="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                <div>
+                    <h5 className="fw-bold text-dark mb-0">
+                        🌱 Suggested Plants for <span className="text-success">{userCity}</span>
+                    </h5>
+                    <small className="text-muted">
+                        Tailored for <span className={`fw-bold text-dark`}>{currentSeason}</span>
+                    </small>
+                </div>
+                <span className={`badge ${currentSeasonStyle.color} border rounded-pill px-2 py-1 shadow-sm d-flex align-items-center gap-1`}>
+                    {currentSeasonStyle.icon} {currentSeason}
+                </span>
+            </div>
+
+            {loading ? (
+                // Compact Skeleton
+                <div className="row g-3">
+                    {[1, 2, 3, 4].map((i) => (
+                        <div className="col-12 col-md-6 col-lg-4" key={i}>
+                            <div className="card border-0 shadow-sm p-2 d-flex flex-row align-items-center gap-3">
+                                <div className="bg-secondary-subtle rounded-3" style={{ width: '60px', height: '60px' }}></div>
+                                <div className="w-100">
+                                    <span className="placeholder col-6 bg-secondary mb-1"></span>
+                                    <span className="placeholder col-10 bg-secondary"></span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="row g-3">
+                    {recommendations.map((plant, index) => (
+                        <div className="col-12 col-md-6 col-lg-4" key={index}>
+                            <div
+                                className="card border-0 shadow-sm rounded-3 overflow-hidden h-100 position-relative"
+                                style={{ transition: 'all 0.2s ease', backgroundColor: '#fff' }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-3px)';
+                                    e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.08)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 0.125rem 0.25rem rgba(0,0,0,0.075)';
+                                }}
+                            >
+                                <div className="d-flex align-items-center p-2">
+                                    {/* Small Thumbnail Image */}
+                                    <div className="flex-shrink-0 position-relative">
+                                        <img
+                                            src={plant.imageUrl}
+                                            alt={plant.name}
+                                            className="rounded-3 object-fit-cover shadow-sm"
+                                            style={{ width: '70px', height: '70px' }}
+                                        />
+                                        {/* "Perfect Now" Shiny Indicator */}
+                                        {plant.seasons.includes(currentSeason) && (
+                                            <div
+                                                className="position-absolute shadow-sm d-flex align-items-center justify-content-center bg-white rounded-circle border border-warning"
+                                                style={{
+                                                    width: '20px', height: '20px',
+                                                    bottom: '-5px', right: '-5px',
+                                                    zIndex: 2
+                                                }}
+                                                title="Perfect for this season!"
+                                            >
+                                                <Sparkles size={12} className="text-warning fill-warning" />
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Text Content - Compact */}
+                                    <div className="flex-grow-1 ms-3" style={{ minWidth: 0 }}>
+                                        <div className="d-flex justify-content-between align-items-start">
+                                            <h6 className="fw-bold text-dark mb-1 text-truncate">{plant.name}</h6>
+                                        </div>
+                                        <p className="text-muted small mb-1 lh-sm text-truncate-2" style={{ fontSize: '0.85rem' }}>
+                                            {plant.reason}
+                                        </p>
+
+                                        {/* Colorful Seasonal Badges */}
+                                        <div className="d-flex gap-1 flex-wrap" style={{ minHeight: '18px' }}>
+                                            {plant.seasons.slice(0, 3).map((s, i) => { // Show up to 3 badges
+                                                const style = getSeasonStyle(s);
+                                                return (
+                                                    <span key={i} className={`badge ${style.color} border rounded-1 py-0 px-1 d-flex align-items-center gap-1`} style={{ fontSize: '0.6rem', fontWeight: 'bold' }}>
+                                                        {style.icon} {s}
+                                                    </span>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             )}
         </div>

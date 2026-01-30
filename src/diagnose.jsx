@@ -60,14 +60,14 @@ function Diagnose() {
 
     try {
       // Send the image to your Flask backend's upload endpoint
-      const response = await fetch('http://127.0.0.1:5000/upload/', {
+      const response = await fetch('http://127.0.0.1:5001/upload/', {
         method: 'POST',
         body: formData,
       });
 
       if (!response.ok) {
         let errorData = { error: `HTTP error! status: ${response.status}` };
-        
+
         try {
           const responseText = await response.text();
           errorData = JSON.parse(responseText);
@@ -78,7 +78,34 @@ function Diagnose() {
       }
 
       const data = await response.json();
-      setDiagnosisResult(data.prediction); 
+      setDiagnosisResult(data.prediction);
+
+      // 📧 Send Interactive Diagnosis Email (if user is logged in)
+      const userInfoStr = localStorage.getItem('userInfo');
+      const userInfo = userInfoStr ? JSON.parse(userInfoStr) : null;
+      const token = userInfo?.token;
+
+      if (token) {
+        try {
+          await fetch('http://localhost:5002/api/plants/diagnosis-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+              plantName: 'Your Plant', // We could ask user for this
+              diseaseName: data.prediction.name,
+              confidence: data.prediction.confidence || 0.95, // Fallback if not provided
+              cure: data.prediction.cure,
+              cause: data.prediction.cause
+            })
+          });
+          console.log("Diagnosis email trigger sent");
+        } catch (emailErr) {
+          console.error("Failed to trigger email", emailErr);
+        }
+      }
     } catch (error) {
       console.error("Error during diagnosis:", error);
       setError(`Failed to get diagnosis: ${error.message}. Please try again.`);

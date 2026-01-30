@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS bundle
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // SVG Icons
-// LeafIcon: Now represents a shopping bag, to match the image.
 const LeafIcon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <circle cx="9" cy="21" r="1" />
@@ -12,7 +11,6 @@ const LeafIcon = (props) => (
   </svg>
 );
 
-// ShoppingCartIcon: (This remains the same, as its SVG content is now duplicated in LeafIcon)
 const ShoppingCartIcon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <circle cx="9" cy="21" r="1" />
@@ -21,8 +19,6 @@ const ShoppingCartIcon = (props) => (
   </svg>
 );
 
-// ... (rest of your Page.jsx content)
-// PlusIcon: Used for the "Add to Cart" button.
 const PlusIcon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <line x1="12" y1="5" x2="12" y2="19" />
@@ -30,7 +26,6 @@ const PlusIcon = (props) => (
   </svg>
 );
 
-// Trash2Icon: Used for removing items from the cart.
 const Trash2Icon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M3 6h18" />
@@ -40,7 +35,6 @@ const Trash2Icon = (props) => (
   </svg>
 );
 
-// ArrowLeftIcon: Used for navigating back in the checkout process.
 const ArrowLeftIcon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <line x1="19" y1="12" x2="5" y2="12" />
@@ -48,24 +42,35 @@ const ArrowLeftIcon = (props) => (
   </svg>
 );
 
-// CheckCircleIcon: Used in the payment success animation.
 const CheckCircleIcon = (props) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#28a745" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-8.83" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#28a745" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-8.83" />
+    <polyline points="22 4 12 14.01 9 11.01" />
+  </svg>
 );
 
+const SendIcon = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <line x1="22" y1="2" x2="11" y2="13" />
+    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+  </svg>
+);
 
-// Mock product data for the store
+const UserIcon = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+);
+
+// Mock product data
 export const products = [
-  // Plants (8 Cards)
-  { id: 1, name: 'Tomato Plant', price: 99.00, image: './p2.jpg', type: 'Edible Vegetable Plant',  details: '🌱 Organic starter in nursery pot, perfect for home gardening beginners.', bestSeller: true },
+  { id: 1, name: 'Tomato Plant', price: 99.00, image: './p2.jpg', type: 'Edible Vegetable Plant', details: '🌱 Organic starter in nursery pot, perfect for home gardening beginners.', bestSeller: true },
   {
     id: 2,
     name: 'Rose Plant',
     price: 149.00,
-    image: './p3.jpg', // fallback
+    image: './p3.jpg',
     type: 'Flowering Plant',
     details: '🌸 Available in red, pink, yellow',
     bestSeller: true,
@@ -83,35 +88,55 @@ export const products = [
   { id: 6, name: 'Snake Plant', price: 199.00, image: './p11.jpg', type: 'Indoor Air Purifying', details: '🌬️ NASA approved oxygen booster' },
   { id: 7, name: 'Peace Lily', price: 189.00, image: './p12.jpg', type: 'Indoor Flowering', details: '🌸 Low light flowering plant' },
   { id: 8, name: 'Spider Plant', price: 119.00, image: './p13.png', type: 'Indoor Hanging', details: '🪴 Great for pet-friendly homes' },
-
-  // Organic Fertilizers (5 Cards)
   { id: 9, name: 'Vermicompost', price: 99.00, image: './p16.png', type: 'Organic Soil Enricher', details: '🌿 Improves root growth and soil health', bestSeller: true },
   { id: 10, name: 'Neem Cake Fertilizer', price: 89.00, image: './p17.jpg', type: 'Dual-purpose Pest Control + Fertilizer', details: '🐛 Natural insect deterrent' },
   { id: 11, name: 'Seaweed Extract / Liquid Seaweed', price: 199.00, image: './p18.png', type: 'Liquid Plant Tonic', details: '🌱 Stimulates flowering and immunity' },
   { id: 12, name: 'Bone Meal', price: 149.00, image: './p19.png', type: '🌼 Ideal for flowering plants' },
   { id: 13, name: 'Panchagavya', price: 179.00, image: './p21.png', type: 'Traditional Bio-Fertilizer', details: '🧪 Made from cow-based natural inputs' },
-
-  // Planters (2 Cards)
   { id: 14, name: 'Ceramic Duo Planter ', price: 499.00, image: './p20.png', type: 'Premium Indoor Pot (Holds 2 Plants)', details: '🎍 Ceramic + Bamboo Tray', bestSeller: true },
   { id: 15, name: 'GardenStretch 3-in-1 Grow Trough', price: 799.00, image: './p22.png', type: 'Rectangular Outdoor Planter', details: '🌿 Holds up to 3 medium plants' },
-
-  // Smart System (1 Card)
-  { id: 16, name: 'Growlify – Smart Irrigation System (Auto Water)', price: 'Coming Soon', image: './p14.jpg', type: 'IoT-Based Auto Watering System', details: '🔄 Sensors + Scheduled Watering', comingSoon: true },
+  {
+    id: 16,
+    name: 'Growlify – Smart Irrigation System (Auto Water)',
+    price: 'Coming Soon',
+    image: './p14.jpg',
+    type: 'IoT-Based Auto Watering System',
+    details: '🔄 Smart Moisture Sensors • ⏱️ Automated Scheduling • 💧 60% Water Savings • 📱 Mobile App Control • 🌱 Perfect for Indoor & Outdoor Gardens',
+    comingSoon: true,
+    productLabel: 'budget',
+    labelText: 'Budget Friendly'
+  },
+  {
+    id: 17,
+    name: 'Growlify Guardian – Smart Garden Protection (Auto Care)',
+    price: 'Coming Soon',
+    image: './p14.jpg',
+    type: 'IoT-Powered Intelligent Garden Monitoring & Control System',
+    details: '🛡️ Auto Irrigation + Pest Protection • Sensor-Driven Smart Decisions • Weather-Aware & Rain-Safe • Low-Chemical, Eco-Friendly Care',
+    comingSoon: true,
+    productLabel: 'premium',
+    labelText: 'Premium'
+  },
 ];
 
-// Product Card Component: Displays individual product information and an "Add to Cart" button.
-const ProductCard = ({ product, onAddToCart }) => {
-  // State to manage selected option (e.g., color) for products that have them.
+// Product Card Component
+const ProductCard = ({ product, onAddToCart, isLoggedIn, onAskForQuotation, onShowLoginToast }) => {
   const [selectedOption, setSelectedOption] = useState(product.colors ? product.colors[0] : null);
 
-  // Handler for adding the product to the cart.
   const handleAddToCartClick = () => {
     onAddToCart(product, selectedOption);
   };
 
+  const handleQuotationClick = () => {
+    if (isLoggedIn) {
+      onAskForQuotation(product);
+    } else {
+      onShowLoginToast();
+    }
+  };
+
   return (
     <div className="card shadow-sm h-100 position-relative overflow-hidden">
-      {/* Best Seller badge, shown if the product is marked as a best seller */}
       {product.bestSeller && (
         <span
           className="best-seller badge position-absolute top-0 end-0 m-2 text-white shadow"
@@ -120,29 +145,33 @@ const ProductCard = ({ product, onAddToCart }) => {
           Best Seller
         </span>
       )}
-     
-      {/* Product image */}
+
+      {/* Product Label - Budget Friendly or Premium */}
+      {product.productLabel && (
+        <span
+          className={`product-label-badge ${product.productLabel === 'premium' ? 'premium-label' : 'budget-label'}`}
+        >
+          {product.productLabel === 'premium' ? '⭐ ' : '💰 '}{product.labelText}
+        </span>
+      )}
+
       <img
         src={product.colorImages?.[selectedOption] || product.image}
         className="card-img-top"
         alt={product.name}
-        style={{ height: '180px', objectFit: 'cover', transition: '0.3s ease-in-out' }}
+        style={{ height: '150px', objectFit: 'cover', transition: '0.3s ease-in-out' }}
       />
-     
+
       <div className="card-body d-flex flex-column">
         <div className="d-flex justify-content-between align-items-start mb-2">
-          {/* Product name */}
           <h5 className="card-title text-dark flex-grow-1">{product.name}</h5>
-          {/* Product price, not shown if "Coming Soon" */}
           {!product.comingSoon && (
             <p className="card-text text-success fw-bold">₹{product.price.toFixed(2)}</p>
           )}
         </div>
-        {/* Product type and details */}
         <p className="card-text text-muted small mb-1">{product.type}</p>
         <p className="product-description">{product.details}</p>
 
-        {/* Color selection dropdown if product has colors */}
         {product.colors && (
           <div className="mb-3">
             <label htmlFor={`color-select-${product.id}`} className="form-label small text-dark">Select Color:</label>
@@ -156,7 +185,7 @@ const ProductCard = ({ product, onAddToCart }) => {
                 fontWeight: '500'
               }}
               value={selectedOption}
-              onChange={(e) => setSelectedOption(e.target.value)} // Fixed: Changed setSelected to setSelectedOption
+              onChange={(e) => setSelectedOption(e.target.value)}
             >
               {product.colors.map(color => (
                 <option key={color} value={color}>{color}</option>
@@ -165,17 +194,26 @@ const ProductCard = ({ product, onAddToCart }) => {
           </div>
         )}
 
-        {/* "Coming Soon" button or "Add to Cart" button */}
         {product.comingSoon ? (
+          (product.id === 16 || product.id === 17) ? (
+            <button
+              onClick={handleQuotationClick}
+              className={`main-action-button quotation-button mt-auto d-flex align-items-center justify-content-center gap-2 ${product.productLabel === 'premium' ? 'premium-quotation-btn' : ''}`}
+            >
+              <SendIcon style={{ width: '1.25em', height: '1.25em' }} />
+              Ask for Quotation
+            </button>
+          ) : (
             <button
               className="coming-soon mt-auto d-flex align-items-center justify-content-center gap-2 w-100 py-2"
+              disabled
             >
-                Coming Soon
+              Coming Soon
             </button>
+          )
         ) : (
           <button
             onClick={handleAddToCartClick}
-            // Removed 'btn' class to avoid Bootstrap conflicts
             className="main-action-button add-to-cart-button mt-auto d-flex align-items-center justify-content-center gap-2"
           >
             <PlusIcon style={{ width: '1.25em', height: '1.25em' }} />
@@ -187,43 +225,470 @@ const ProductCard = ({ product, onAddToCart }) => {
   );
 };
 
-// Payment Success Animation Component: Displays a success message and animation after payment.
-const PaymentSuccessAnimation = ({ onHideAnimation }) => {
-    // Automatically hide the animation after a few seconds.
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            onHideAnimation();
-        }, 3000); // Animation visible for 3 seconds
-        return () => clearTimeout(timer);
-    }, [onHideAnimation]);
+// Quotation Modal Component - Enhanced with File Uploads
+const QuotationModal = ({ show, onClose, product, currentUser, token, onShowToast }) => {
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [frontViewImage, setFrontViewImage] = useState(null);
+  const [topViewImage, setTopViewImage] = useState(null);
+  const [video, setVideo] = useState(null);
+  const [frontViewPreview, setFrontViewPreview] = useState(null);
+  const [topViewPreview, setTopViewPreview] = useState(null);
+  const [isSending, setIsSending] = useState(false);
+  const [sendSuccess, setSendSuccess] = useState(false);
 
-    return (
-        <div className="payment-success-overlay">
-            <div className="payment-success-card">
-                <CheckCircleIcon className="payment-success-icon" />
-                <h3 className="mt-3 mb-2 text-dark">Payment Successful!</h3>
-                <p className="text-muted text-center">Your order has been confirmed.</p>
-                <p className="text-muted text-center">An email receipt has been sent.</p>
-                <button onClick={onHideAnimation} className="btn btn-success mt-4">
-                    Continue Shopping
-                </button>
+  useEffect(() => {
+    // Pre-fill fields from the logged-in user
+    if (currentUser) {
+      setEmail(currentUser.email || '');
+      setPhone(currentUser.phone || '');
+    }
+  }, [currentUser, show]);
+
+  useEffect(() => {
+    // Reset modal state when it's opened
+    if (show) {
+      setIsSending(false);
+      setSendSuccess(false);
+      setFrontViewImage(null);
+      setTopViewImage(null);
+      setVideo(null);
+      setFrontViewPreview(null);
+      setTopViewPreview(null);
+      if (currentUser) {
+        setEmail(currentUser.email || '');
+        setPhone(currentUser.phone || '');
+      }
+    }
+  }, [show, currentUser]);
+
+  const handleImageChange = (e, type) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (type === 'front') {
+        setFrontViewImage(file);
+        setFrontViewPreview(URL.createObjectURL(file));
+      } else {
+        setTopViewImage(file);
+        setTopViewPreview(URL.createObjectURL(file));
+      }
+    }
+  };
+
+  const handleVideoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setVideo(file);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!frontViewImage || !topViewImage) {
+      onShowToast('Please upload both front view and top view images', 'bg-danger');
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('productId', product.id);
+      formData.append('productName', product.name);
+      formData.append('productType', product.productLabel || 'budget');
+      formData.append('email', email);
+      formData.append('phone', phone);
+      formData.append('frontViewImage', frontViewImage);
+      formData.append('topViewImage', topViewImage);
+      if (video) {
+        formData.append('video', video);
+      }
+
+      const response = await fetch("http://localhost:5002/api/shop/submit-quotation", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`
+        },
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send quotation');
+      }
+
+      setSendSuccess(true);
+      setTimeout(() => {
+        onClose();
+      }, 4000);
+
+    } catch (err) {
+      console.error(err);
+      onShowToast(`Error: ${err.message}`, 'bg-danger');
+      setIsSending(false);
+    }
+  };
+
+  if (!show) {
+    return null;
+  }
+
+  return (
+    <div className="payment-success-overlay">
+      <div className="quotation-modal-card">
+        {sendSuccess ? (
+          <>
+            <CheckCircleIcon className="payment-success-icon" />
+            <h3 className="mt-3 mb-2 text-dark">Request Submitted!</h3>
+            <p className="text-muted text-center">Your quotation request for<br /><strong>{product.name}</strong> has been submitted.</p>
+            <p className="text-muted text-center">Our team will review your images and send a detailed quotation to:<br /><strong>{email}</strong></p>
+            <div className="success-badge mt-3">
+              {product.productLabel === 'premium' ? '⭐ Premium Request' : '💰 Budget Friendly Request'}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="modal-header-section">
+              <SendIcon style={{ width: '50px', height: '50px', color: product.productLabel === 'premium' ? '#FFD700' : '#17a2b8', marginBottom: '0.5rem' }} />
+              <h3 className="mt-2 mb-1 text-dark">Request Quotation</h3>
+              <span className={`product-type-badge ${product.productLabel === 'premium' ? 'premium' : 'budget'}`}>
+                {product.productLabel === 'premium' ? '⭐ Premium' : '💰 Budget Friendly'}
+              </span>
+              <p className="text-muted text-center mt-2" style={{ fontSize: '14px' }}>
+                <strong>{product.name}</strong>
+              </p>
             </div>
 
-            {/* Styles specific to PaymentSuccessAnimation */}
-            <style jsx="true">{`
-                /* Styles for Payment Success Animation */
+            <form onSubmit={handleSubmit} className="w-100 mt-3">
+              {/* Image Upload Section */}
+              <div className="upload-section mb-3">
+                <h6 className="upload-title">📷 Upload Garden Images (Required)</h6>
+
+                <div className="image-upload-grid">
+                  <div className="upload-box">
+                    <label htmlFor="frontViewImage" className="upload-label">
+                      {frontViewPreview ? (
+                        <img src={frontViewPreview} alt="Front View" className="preview-image" />
+                      ) : (
+                        <div className="upload-placeholder">
+                          <span className="upload-icon">📸</span>
+                          <span>Front View</span>
+                        </div>
+                      )}
+                    </label>
+                    <input
+                      type="file"
+                      id="frontViewImage"
+                      accept="image/*"
+                      onChange={(e) => handleImageChange(e, 'front')}
+                      className="hidden-input"
+                      required
+                    />
+                  </div>
+
+                  <div className="upload-box">
+                    <label htmlFor="topViewImage" className="upload-label">
+                      {topViewPreview ? (
+                        <img src={topViewPreview} alt="Top View" className="preview-image" />
+                      ) : (
+                        <div className="upload-placeholder">
+                          <span className="upload-icon">🔍</span>
+                          <span>Top View</span>
+                        </div>
+                      )}
+                    </label>
+                    <input
+                      type="file"
+                      id="topViewImage"
+                      accept="image/*"
+                      onChange={(e) => handleImageChange(e, 'top')}
+                      className="hidden-input"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Video Upload Section */}
+              <div className="mb-3">
+                <label htmlFor="videoUpload" className="form-label" style={{ fontSize: '14px' }}>
+                  🎥 Upload Video (Optional)
+                </label>
+                <input
+                  type="file"
+                  id="videoUpload"
+                  accept="video/*"
+                  onChange={handleVideoChange}
+                  className="form-control form-control-sm"
+                />
+                {video && (
+                  <small className="text-success">✓ {video.name}</small>
+                )}
+              </div>
+
+              {/* Contact Details */}
+              <div className="mb-3 text-start">
+                <label htmlFor="quoteEmail" className="form-label" style={{ fontSize: '14px' }}>📧 Email Address:</label>
+                <input
+                  type="email"
+                  className="form-control form-control-sm"
+                  id="quoteEmail"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div className="mb-3 text-start">
+                <label htmlFor="quotePhone" className="form-label" style={{ fontSize: '14px' }}>📱 Phone Number:</label>
+                <input
+                  type="tel"
+                  className="form-control form-control-sm"
+                  id="quotePhone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                  maxLength="10"
+                  placeholder="Enter your 10-digit phone number"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className={`main-action-button w-100 py-2 ${product.productLabel === 'premium' ? 'premium-submit-btn' : ''}`}
+                disabled={isSending}
+              >
+                {isSending ? (
+                  <>
+                    <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span className="ms-2">Submitting...</span>
+                  </>
+                ) : (
+                  '📤 Submit Quotation Request'
+                )}
+              </button>
+              <button
+                type="button"
+                className="btn btn-link text-secondary w-100 mt-2"
+                onClick={onClose}
+                disabled={isSending}
+              >
+                Cancel
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+      {/* Modal Styles */}
+      <style jsx="true">{`
+        .payment-success-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.6);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 2000;
+          backdrop-filter: blur(5px);
+          animation: fadeIn 0.3s ease-out;
+          overflow-y: auto;
+          padding: 20px;
+        }
+
+        .quotation-modal-card {
+          background-color: #fff;
+          padding: 24px 28px;
+          border-radius: 20px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+          text-align: center;
+          width: 100%;
+          max-width: 520px;
+          max-height: 85vh;
+          overflow-y: auto;
+          transform: translateY(20px);
+          animation: slideIn 0.4s ease-out forwards;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .modal-header-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .product-type-badge {
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        .product-type-badge.premium {
+          background: linear-gradient(135deg, #FFD700, #FFA500);
+          color: #1a1a2e;
+          box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .product-type-badge.budget {
+          background: linear-gradient(135deg, #17a2b8, #1fc8e3);
+          color: white;
+        }
+
+        .upload-section {
+          background: #f8f9fa;
+          border-radius: 12px;
+          padding: 15px;
+        }
+
+        .upload-title {
+          color: #333;
+          margin-bottom: 12px;
+          font-size: 14px;
+        }
+
+        .image-upload-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+
+        .upload-box {
+          position: relative;
+        }
+
+        .upload-label {
+          display: block;
+          cursor: pointer;
+          border: 2px dashed #ccc;
+          border-radius: 10px;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          height: 100px;
+        }
+
+        .upload-label:hover {
+          border-color: #28a745;
+          background: #f0fff4;
+        }
+
+        .upload-placeholder {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          color: #666;
+          font-size: 12px;
+        }
+
+        .upload-icon {
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+
+        .preview-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .hidden-input {
+          display: none;
+        }
+
+        .success-badge {
+          background: linear-gradient(135deg, #4caf50, #2e7d32);
+          color: white;
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-weight: 600;
+        }
+
+        .premium-submit-btn {
+          background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+          color: #1a1a2e !important;
+        }
+
+        .premium-submit-btn:hover {
+          box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4) !important;
+        }
+
+        .payment-success-icon {
+          animation: checkmarkGrow 0.6s ease-out forwards;
+          transform-origin: center;
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: drawCheckmark 0.8s ease-out forwards, pulseGreen 1.5s infinite alternate;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateY(50px) scale(0.9); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes drawCheckmark {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        @keyframes pulseGreen {
+          0% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.9; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// Payment Success Animation
+const PaymentSuccessAnimation = ({ onHideAnimation }) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onHideAnimation();
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [onHideAnimation]);
+
+  return (
+    <div className="payment-success-overlay">
+      <div className="payment-success-card">
+        <CheckCircleIcon className="payment-success-icon" />
+        <h3 className="mt-3 mb-2 text-dark">Payment Successful!</h3>
+        <p className="text-muted text-center">Your order has been confirmed.</p>
+        <p className="text-muted text-center">An email receipt has been sent.</p>
+        <button onClick={onHideAnimation} className="btn btn-success mt-4">
+          Continue Shopping
+        </button>
+      </div>
+
+      <style jsx="true">{`
                 .payment-success-overlay {
                     position: fixed;
                     top: 0;
                     left: 0;
                     width: 100vw;
                     height: 100vh;
-                    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+                    background-color: rgba(0, 0, 0, 0.6);
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    z-index: 2000; /* Above everything else */
-                    backdrop-filter: blur(5px); /* Optional: blur background */
+                    z-index: 2000;
+                    backdrop-filter: blur(5px);
                     animation: fadeIn 0.3s ease-out;
                 }
 
@@ -244,8 +709,8 @@ const PaymentSuccessAnimation = ({ onHideAnimation }) => {
                 .payment-success-icon {
                     animation: checkmarkGrow 0.6s ease-out forwards;
                     transform-origin: center;
-                    stroke-dasharray: 1000; /* Adjust this value */
-                    stroke-dashoffset: 1000; /* Adjust this value */
+                    stroke-dasharray: 1000;
+                    stroke-dashoffset: 1000;
                     animation: drawCheckmark 0.8s ease-out forwards, pulseGreen 1.5s infinite alternate;
                 }
 
@@ -259,7 +724,6 @@ const PaymentSuccessAnimation = ({ onHideAnimation }) => {
                     to { opacity: 1; transform: translateY(0) scale(1); }
                 }
 
-                /* Specific animation for the checkmark path */
                 @keyframes drawCheckmark {
                     to {
                         stroke-dashoffset: 0;
@@ -272,14 +736,14 @@ const PaymentSuccessAnimation = ({ onHideAnimation }) => {
                     100% { transform: scale(1); opacity: 1; }
                 }
             `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
-// Payment Failure Animation Component: Displays a failure message and animation after payment.
+// Payment Failure Animation
 const PaymentFailureAnimation = ({ onHideAnimation }) => {
   useEffect(() => {
-    const timer = setTimeout(onHideAnimation, 4000); // Auto-hide after 4 seconds as per user's prompt
+    const timer = setTimeout(onHideAnimation, 4000);
     return () => clearTimeout(timer);
   }, [onHideAnimation]);
 
@@ -341,21 +805,17 @@ const PaymentFailureAnimation = ({ onHideAnimation }) => {
   );
 };
 
-
-// Checkout Form Component: Handles user input for shipping address and payment initiation.
+// Checkout Form Component
 const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, setShowPaymentFailure, handlePlaceOrder, isProcessingOrder, setIsProcessingOrder }) => {
   const [formData, setFormData] = useState({
     fullName: '', email: '', phone: '', address: '', area: '', city: '', state: '', pincode: ''
   });
   const [errors, setErrors] = useState({});
-  // Removed local isProcessingOrder, now passed as prop
 
-  // Effect to auto-fetch city and state based on pincode using an external API.
   useEffect(() => {
-    // Clear city/state errors when pincode changes
     setErrors(prev => {
-        const { pincode, city, state, ...rest } = prev;
-        return rest;
+      const { pincode, city, state, ...rest } = prev;
+      return rest;
     });
 
     if (formData.pincode.length === 6) {
@@ -392,22 +852,21 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
           setErrors(prev => ({ ...prev, pincode: 'Failed to fetch Pincode details.' }));
         });
     } else if (formData.pincode.length > 0 && formData.pincode.length < 6) {
-        setErrors(prev => ({ ...prev, pincode: 'Pincode must be 6 digits.' }));
-        setFormData(prev => ({
-            ...prev,
-            city: '',
-            state: ''
-        }));
+      setErrors(prev => ({ ...prev, pincode: 'Pincode must be 6 digits.' }));
+      setFormData(prev => ({
+        ...prev,
+        city: '',
+        state: ''
+      }));
     } else {
-        setFormData(prev => ({
-            ...prev,
-            city: '',
-            state: ''
-        }));
+      setFormData(prev => ({
+        ...prev,
+        city: '',
+        state: ''
+      }));
     }
   }, [formData.pincode]);
 
-  // Handles changes to form input fields and clears associated errors.
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData(prev => ({
@@ -415,38 +874,37 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
       [id]: value
     }));
     setErrors(prev => {
-        const newErrors = { ...prev };
-        delete newErrors[id];
-        return newErrors;
+      const newErrors = { ...prev };
+      delete newErrors[id];
+      return newErrors;
     });
   };
 
-  // Validates all form fields.
   const validateForm = () => {
     let newErrors = {};
     if (!formData.fullName.trim()) newErrors.fullName = 'Full Name is required.';
     if (!formData.email.trim()) {
-        newErrors.email = 'Email is required.';
+      newErrors.email = 'Email is required.';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-        newErrors.email = 'Invalid email format.';
+      newErrors.email = 'Invalid email format.';
     }
     if (!formData.phone.trim()) {
-        newErrors.phone = 'Phone number is required.';
+      newErrors.phone = 'Phone number is required.';
     } else if (!/^\d{10}$/.test(formData.phone)) {
-        newErrors.phone = 'Phone number must be 10 digits.';
+      newErrors.phone = 'Phone number must be 10 digits.';
     }
     if (!formData.address.trim()) newErrors.address = 'Address is required.';
     if (!formData.area.trim()) newErrors.area = 'Area is required.';
-   
+
     if (!formData.pincode.trim()) {
-        newErrors.pincode = 'Pincode is required.';
+      newErrors.pincode = 'Pincode is required.';
     } else if (!/^\d{6}$/.test(formData.pincode)) {
-        newErrors.pincode = 'Pincode must be 6 digits.';
+      newErrors.pincode = 'Pincode must be 6 digits.';
     }
 
     if (!formData.city.trim()) newErrors.city = 'City is required.';
     if (!formData.state.trim()) newErrors.state = 'State is required.';
-   
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -454,7 +912,6 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
   return (
     <div className="p-4 d-flex flex-column" style={{ maxHeight: '100vh', overflowY: 'auto' }}>
       <div className="flex-shrink-0">
-        {/* Back to Cart button */}
         <button onClick={onBackToCart} className="btn btn-link text-dark d-flex align-items-center gap-2 mb-4 p-0 text-decoration-none">
           <ArrowLeftIcon style={{ width: '1.25em', height: '1.25em' }} />
           Back to Cart
@@ -469,7 +926,7 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
           }
         }}
         className="flex-grow-1"
-        id="checkout-form" // Added id to link button to the form
+        id="checkout-form"
         style={{
           maxWidth: '600px',
           margin: 'auto',
@@ -482,7 +939,6 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
         }}
       >
         <h4 className="mb-3 text-secondary">Shipping Address</h4>
-        {/* Full Name input */}
         <div className="mb-3">
           <label htmlFor="fullName">Full Name</label>
           <input
@@ -496,7 +952,6 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
           />
           {errors.fullName && <div className="invalid-feedback">{errors.fullName}</div>}
         </div>
-        {/* Email input */}
         <div className="mb-3">
           <label htmlFor="email">Email</label>
           <input
@@ -510,22 +965,20 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
           />
           {errors.email && <div className="invalid-feedback">{errors.email}</div>}
         </div>
-        {/* Phone Number input */}
         <div className="mb-3">
           <label htmlFor="phone">Phone Number</label>
           <input
-            type="tel" // Use type="tel" for phone numbers
+            type="tel"
             id="phone"
             value={formData.phone}
             onChange={handleChange}
             placeholder="Enter your phone number"
-            maxLength={10} // Assuming 10-digit phone numbers
+            maxLength={10}
             className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
             required
           />
           {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
         </div>
-        {/* Address input */}
         <div className="mb-3">
           <label htmlFor="address">Plot No. / Address</label>
           <input
@@ -539,7 +992,6 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
           />
           {errors.address && <div className="invalid-feedback">{errors.address}</div>}
         </div>
-        {/* Area input */}
         <div className="mb-3">
           <label htmlFor="area">Area</label>
           <input
@@ -552,9 +1004,8 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
             required
           />
           {errors.area && <div className="invalid-feedback">{errors.area}</div>}
-       </div>
-       
-        {/* Pincode input */}
+        </div>
+
         <div className="mb-3">
           <label htmlFor="pincode">Pincode</label>
           <input
@@ -570,7 +1021,6 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
           {errors.pincode && <div className="invalid-feedback">{errors.pincode}</div>}
         </div>
 
-        {/* City and State inputs (read-only, populated by pincode) */}
         <div className="row g-3">
           <div className="col-md-6">
             <label htmlFor="city">City</label>
@@ -578,7 +1028,7 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
               type="text"
               id="city"
               value={formData.city}
-              onChange={handleChange} // Still include onChange to clear errors if user tries to type
+              onChange={handleChange}
               placeholder="Enter your city"
               readOnly
               className={`form-control ${errors.city ? 'is-invalid' : ''}`}
@@ -592,7 +1042,7 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
               type="text"
               id="state"
               value={formData.state}
-              onChange={handleChange} // Still include onChange to clear errors if user tries to type
+              onChange={handleChange}
               placeholder="Enter state"
               readOnly
               className={`form-control ${errors.state ? 'is-invalid' : ''}`}
@@ -603,12 +1053,11 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
         </div>
       </form>
       <div className="flex-shrink-0 mt-4">
-        {/* Place Order button with loading spinner */}
         <button
           className="main-action-button w-100 py-3"
-          type="submit" // Set type to submit to trigger form's onSubmit
-          form="checkout-form" // Link button to the form
-          disabled={isProcessingOrder} // Disable button when processing
+          type="submit"
+          form="checkout-form"
+          disabled={isProcessingOrder}
         >
           {isProcessingOrder ? (
             <>
@@ -624,40 +1073,35 @@ const CheckoutForm = ({ onBackToCart, cartData, onCloseCart, onPaymentSuccess, s
   );
 };
 
-// Cart Sidebar Component: Displays cart items, allows quantity updates, removal, and proceeds to checkout.
+// Cart Sidebar Component
 const CartSidebar = ({ isOpen, onClose, cart, onRemoveFromCart, onUpdateQuantity, onClearCart, onPaymentSuccess, setShowPaymentFailure, handlePlaceOrder, isProcessingOrder, setIsProcessingOrder }) => {
-  const [view, setView] = useState('cart'); // State to toggle between cart view and checkout form
+  const [view, setView] = useState('cart');
 
-  // Calculate total price of items in the cart (excluding "coming soon" items).
   const total = useMemo(() =>
     cart.reduce((sum, item) => {
-        if (item.comingSoon) return sum;
-        return sum + item.price * item.quantity;
+      if (item.comingSoon) return sum;
+      return sum + item.price * item.quantity;
     }, 0),
     [cart]
   );
 
-  // Functions to change the view within the sidebar.
   const handleCheckout = () => setView('checkout');
   const handleBackToCart = () => setView('cart');
 
-  // Reset view to 'cart' when the sidebar is closed.
   useEffect(() => {
     if (!isOpen) {
-      setTimeout(() => setView('cart'), 300); // Small delay to allow transition
+      setTimeout(() => setView('cart'), 300);
     }
   }, [isOpen]);
 
   return (
     <>
-      {/* Backdrop for the offcanvas sidebar */}
       <div
         className={`offcanvas-backdrop fade ${isOpen ? 'show' : ''}`}
         style={{ display: isOpen ? 'block' : 'none' }}
         onClick={onClose}
       ></div>
 
-      {/* The offcanvas sidebar itself */}
       <div
         className={`offcanvas offcanvas-end ${isOpen ? 'show' : ''}`}
         tabIndex="-1"
@@ -667,11 +1111,12 @@ const CartSidebar = ({ isOpen, onClose, cart, onRemoveFromCart, onUpdateQuantity
           visibility: isOpen ? 'visible' : 'hidden',
           width: '100%',
           maxWidth: '450px',
-          backgroundColor: '#F5F5DC' // Light tan background for the sidebar
+          backgroundColor: '#F5F5DC',
+          marginTop: '110px',
+          height: 'calc(100vh - 90px)'
         }}
       >
         <div className="offcanvas-header pb-0 border-bottom">
-          {/* Header for the cart view */}
           {view === 'cart' ? (
             <>
               <h5 className="offcanvas-title text-dark" id="cartOffcanvasLabel">
@@ -686,134 +1131,156 @@ const CartSidebar = ({ isOpen, onClose, cart, onRemoveFromCart, onUpdateQuantity
               ></button>
             </>
           ) : (
-            null // No header for checkout view, as CheckoutForm handles its own "Back to Cart"
+            null
           )}
         </div>
         <div className="offcanvas-body d-flex flex-column p-0">
-            {/* Conditional rendering based on current view (cart or checkout) */}
-            {view === 'cart' ? (
-                <>
-                    {/* Display if cart is empty */}
-                    {cart.length === 0 ? (
-                        <div className="d-flex flex-column align-items-center justify-content-center h-100 text-center p-4">
-                            <p className="text-secondary fs-5">Your cart is empty.</p>
-                            <button onClick={onClose} className="btn btn-link text-success text-decoration-underline mt-3">
-                                Start Shopping
-                            </button>
-                        </div>
-                    ) : (
-                        // Display cart items
-                        <div className="flex-grow-1 overflow-auto p-4">
-                            {cart.map(item => (
-                                <div key={`${item.id}-${item.selectedOption || ''}`} className="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom">
-                                    <img src={item.image} className="rounded" alt={item.name} style={{ width: '64px', height: '64px', objectFit: 'cover' }} />
-                                    <div className="flex-grow-1">
-                                        <p className="fw-bold mb-1 text-dark">
-                                            {item.name}
-                                            {item.selectedOption && ` (${item.selectedOption})`}
-                                        </p>
-                                        {!item.comingSoon ? (
-                                            // Quantity controls for non-"coming soon" items
-                                            <div className="d-flex align-items-center gap-2">
-                                                <button
-                                                    className="btn btn-outline-secondary btn-sm"
-                                                    onClick={() => onUpdateQuantity(item.id, item.quantity - 1, item.selectedOption)}
-                                                    disabled={item.quantity <= 1}
-                                                >
-                                                    -
-                                                </button>
-                                                <span className="text-sm text-muted">{item.quantity}</span>
-                                                <button
-                                                    className="btn btn-outline-secondary btn-sm"
-                                                    onClick={() => onUpdateQuantity(item.id, item.quantity + 1, item.selectedOption)}
-                                                >
-                                                    +
-                                                </button>
-                                                <span className="text-sm text-muted ms-auto">₹{(item.price * item.quantity).toFixed(2)}</span>
-                                            </div>
-                                        ) : (
-                                            <p className="fw-bold text-info mb-0">Coming Soon</p>
-                                        )}
-                                    </div>
-                                    {/* Remove item button */}
-                                    <button onClick={() => onRemoveFromCart(item.id, item.selectedOption)} className="btn btn-outline-danger btn-sm border-0 p-1">
-                                        <Trash2Icon style={{ width: '1.25em', height: '1.25em' }} />
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-
-                    {/* Total and Proceed to Checkout button, only shown if there are purchasable items */}
-                    {cart.filter(item => !item.comingSoon).length > 0 && (
-                        <div className="p-4 border-top">
-                            <div className="d-flex justify-content-between align-items-center mb-3">
-                                <p className="h5 text-dark">Total</p>
-                                <p className="h4 fw-bold text-dark">₹{total.toFixed(2)}</p>
-                            </div>
+          {view === 'cart' ? (
+            <>
+              {cart.length === 0 ? (
+                <div className="d-flex flex-column align-items-center justify-content-center h-100 text-center p-4">
+                  <p className="text-secondary fs-5">Your cart is empty.</p>
+                  <button onClick={onClose} className="btn btn-link text-success text-decoration-underline mt-3">
+                    Start Shopping
+                  </button>
+                </div>
+              ) : (
+                <div className="flex-grow-1 overflow-auto p-4">
+                  {cart.map(item => (
+                    <div key={`${item.id}-${item.selectedOption || ''}`} className="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom cart-item-animate">
+                      <img src={item.image} className="rounded" alt={item.name} style={{ width: '64px', height: '64px', objectFit: 'cover' }} />
+                      <div className="flex-grow-1">
+                        <p className="fw-bold mb-1 text-dark">
+                          {item.name}
+                          {item.selectedOption && ` (${item.selectedOption})`}
+                        </p>
+                        {!item.comingSoon ? (
+                          <div className="d-flex align-items-center gap-2">
                             <button
-                                onClick={handleCheckout}
-                                className="main-action-button w-100 py-3"
+                              className="btn btn-outline-secondary btn-sm"
+                              onClick={() => onUpdateQuantity(item.id, item.quantity - 1, item.selectedOption)}
+                              disabled={item.quantity <= 1}
                             >
-                                Proceed to Checkout
+                              -
                             </button>
-                        </div>
-                    )}
-                </>
-            ) : (
-                // Render CheckoutForm when view is 'checkout'
-                <CheckoutForm
-                    onBackToCart={handleBackToCart}
-                    cartData={cart}
-                    onCloseCart={() => { onClose(); onClearCart(); }}
-                    onPaymentSuccess={onPaymentSuccess} // Pass the new prop here
-                    setShowPaymentFailure={setShowPaymentFailure} // Pass setShowPaymentFailure
-                    handlePlaceOrder={handlePlaceOrder} // Pass handlePlaceOrder to CheckoutForm
-                    isProcessingOrder={isProcessingOrder} // Pass isProcessingOrder to CheckoutForm
-                    setIsProcessingOrder={setIsProcessingOrder} // Pass setIsProcessingOrder to CheckoutForm
-                />
-            )}
+                            <span className="text-sm text-muted">{item.quantity}</span>
+                            <button
+                              className="btn btn-outline-secondary btn-sm"
+                              onClick={() => onUpdateQuantity(item.id, item.quantity + 1, item.selectedOption)}
+                            >
+                              +
+                            </button>
+                            <span className="text-sm text-muted ms-auto">₹{(item.price * item.quantity).toFixed(2)}</span>
+                          </div>
+                        ) : (
+                          <p className="fw-bold text-info mb-0">Coming Soon</p>
+                        )}
+                      </div>
+                      <button onClick={() => onRemoveFromCart(item.id, item.selectedOption)} className="btn btn-outline-danger btn-sm border-0 p-1">
+                        <Trash2Icon style={{ width: '1.25em', height: '1.25em' }} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {cart.filter(item => !item.comingSoon).length > 0 && (
+                <div className="p-4 border-top">
+                  <div className="d-flex justify-content-between align-items-center mb-3">
+                    <p className="h5 text-dark">Total</p>
+                    <p className="h4 fw-bold text-dark">₹{total.toFixed(2)}</p>
+                  </div>
+                  <button
+                    onClick={handleCheckout}
+                    className="main-action-button w-100 py-3"
+                  >
+                    Proceed to Checkout
+                  </button>
+                </div>
+              )}
+            </>
+          ) : (
+            <CheckoutForm
+              onBackToCart={handleBackToCart}
+              cartData={cart}
+              onCloseCart={() => { onClose(); onClearCart(); }}
+              onPaymentSuccess={onPaymentSuccess}
+              setShowPaymentFailure={setShowPaymentFailure}
+              handlePlaceOrder={handlePlaceOrder}
+              isProcessingOrder={isProcessingOrder}
+              setIsProcessingOrder={setIsProcessingOrder}
+            />
+          )}
         </div>
       </div>
     </>
   );
 };
 
-// MainAppContent: This component now encapsulates all the logic and rendering for the main application.
-export default function Page() { // Renamed from MainAppContent to Page as per original file name
-  // State for the shopping cart items.
+// Main App Component
+export default function Page() {
   const [cart, setCart] = useState([]);
-  // State to control the visibility of the cart sidebar.
   const [isCartOpen, setIsCartOpen] = useState(false);
-  // State for displaying toast notifications (e.g., "Item added to cart!").
-  const [showToast, setShowToast] = useState('');
+  const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-  // State to control the visibility of the payment success animation.
+  const [toastBg, setToastBg] = useState('bg-success');
   const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
-  // State for payment failure popup
   const [showPaymentFailure, setShowPaymentFailure] = useState(false);
-  // State for payment processing spinner
   const [isProcessingOrder, setIsProcessingOrder] = useState(false);
 
+  // Auth State
+  const [currentUser, setCurrentUser] = useState(null);
+  const [token, setToken] = useState(null);
+  const [showQuotationModal, setShowQuotationModal] = useState(false);
+  const [currentQuotationProduct, setCurrentQuotationProduct] = useState(null);
 
-  // The handlePlaceOrder function is moved inside the Page component
+  const isLoggedIn = !!currentUser;
+
+  // Check for existing login in localStorage when page loads
+  useEffect(() => {
+    const userInfo = localStorage.getItem('userInfo');
+    if (userInfo) {
+      const { user, token } = JSON.parse(userInfo);
+      setCurrentUser(user);
+      setToken(token);
+    }
+  }, []);
+
+  const showAppToast = (message, bg = 'bg-success') => {
+    setToastMessage(message);
+    setToastBg(bg);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
+  // Logout Handler
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setToken(null);
+    localStorage.removeItem('userInfo');
+    showAppToast('You have been logged out.', 'bg-dark');
+  };
+
+  // Quotation modal handler
+  const handleAskForQuotation = (product) => {
+    setCurrentQuotationProduct(product);
+    setShowQuotationModal(true);
+  };
+
   const handlePlaceOrder = async (formData, cartData, onCloseCart, onPaymentSuccess) => {
-    console.log("🟢 Place Order clicked"); // Debugging log
-    setIsProcessingOrder(true); // Start loading state
+    console.log("🟢 Place Order clicked");
+    setIsProcessingOrder(true);
 
-    // Calculate total amount from cart data, excluding "coming soon" items.
     const totalAmount = cartData.reduce(
       (sum, item) => item.comingSoon ? sum : sum + item.price * item.quantity,
       0
     );
-    const amountInPaise = Math.round(totalAmount * 100); // Convert ₹ to paise
+    const amountInPaise = Math.round(totalAmount * 100);
 
-    // Debugging log for amount
     console.log("Total Amount (INR):", totalAmount, "Amount (Paise):", amountInPaise);
 
     try {
-      // ✅ 1. Create Razorpay order (updated endpoint)
-      const response = await fetch("http://localhost:5000/api/shop/create-order", {
+      const response = await fetch("http://localhost:5002/api/shop/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: amountInPaise }),
@@ -827,9 +1294,8 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
         return;
       }
 
-      // ✅ 2. Open Razorpay checkout
       const options = {
-        key: process.env.RAZORPAY_KEY_ID, // Your Razorpay Test Key ID
+        key: 'rzp_test_PPZSpcfj6SfJPt',
         amount: orderData.amount,
         currency: "INR",
         name: "Growlify Gardening",
@@ -845,8 +1311,7 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
           console.log("✅ Razorpay payment successful:", response);
 
           try {
-            // ✅ 3. Send confirmation email (updated endpoint)
-            await fetch("http://localhost:5000/api/shop/send-confirmation", {
+            await fetch("http://localhost:5002/api/shop/send-confirmation", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -855,40 +1320,36 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
                 paymentResponse: response,
               }),
             });
-            onPaymentSuccess(); // Show success animation
+            onPaymentSuccess();
           } catch (error) {
             console.error("Error sending confirmation email:", error);
             alert("Payment successful, but failed to send confirmation email.");
           } finally {
             setIsProcessingOrder(false);
-            onCloseCart(); // Close cart and clear it
+            onCloseCart();
           }
         },
-        // ✅ This handles cancel or "exit" case
         modal: {
-         ondismiss: function () {
+          ondismiss: function () {
             console.log("❌ Payment popup dismissed");
-            setIsProcessingOrder(false);           // ✅ Stop loader
-            setShowPaymentFailure(true);           // ✅ Trigger cancel animation
+            setIsProcessingOrder(false);
+            setShowPaymentFailure(true);
             window.scrollTo({ top: 0, behavior: "smooth" });
-            
-            // Optional: auto-hide after 4s
+
             setTimeout(() => {
-              // navigate("/"); // or navigate("/shop") as needed - Assuming 'navigate' is available (e.g., from react-router-dom)
-              setShowPaymentFailure(false); // Hide the popup after 4s
+              setShowPaymentFailure(false);
             }, 4000);
           },
-        }, 
+        },
       };
 
       const rzp = new window.Razorpay(options);
       rzp.open();
 
-      // Payment failure handler
       rzp.on("payment.failed", function (response) {
         console.error("Payment failed details:", response.error);
         setIsProcessingOrder(false);
-        setShowPaymentFailure(true); // Show failure popup
+        setShowPaymentFailure(true);
       });
     } catch (error) {
       console.error("Payment initiation failed:", error);
@@ -897,55 +1358,41 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
     }
   };
 
-
-  // Handler to add a product to the cart.
   const handleAddToCart = (product, selectedOption = null) => {
-    // Prevent adding "coming soon" products to the cart.
     if (product.comingSoon) {
       alert("This product is coming soon and cannot be added to the cart yet!");
       return;
     }
 
     setCart(prevCart => {
-      // Create a unique identifier for cart items, including selected options (like color).
       const cartItemId = `${product.id}-${selectedOption || ''}`;
-      // Check if the item already exists in the cart.
       const existingItem = prevCart.find(item => `${item.id}-${item.selectedOption || ''}` === cartItemId);
 
       if (existingItem) {
-        // If item exists, update its quantity.
-        setToastMessage(`${product.name} quantity updated!`);
+        showAppToast(`${product.name} quantity updated!`, 'bg-dark');
         return prevCart.map(item =>
           `${item.id}-${item.selectedOption || ''}` === cartItemId
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-      // If item is new, add it to the cart with quantity 1.
-      setToastMessage(`${product.name} added to cart!`);
+      showAppToast(`${product.name} added to cart!`);
       return [...prevCart, { ...product, quantity: 1, selectedOption }];
     });
-    // Show toast notification and hide it after 3 seconds.
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
   };
 
-  // Handler to remove a product from the cart.
   const handleRemoveFromCart = (productId, selectedOption = null) => {
     setCart(prevCart => prevCart.filter(item => {
-        const itemIdentifier = `${item.id}-${item.selectedOption || ''}`;
-        const targetIdentifier = `${productId}-${selectedOption || ''}`;
-        return itemIdentifier !== targetIdentifier;
+      const itemIdentifier = `${item.id}-${item.selectedOption || ''}`;
+      const targetIdentifier = `${productId}-${selectedOption || ''}`;
+      return itemIdentifier !== targetIdentifier;
     }));
   };
 
-  // Handler to update the quantity of a product in the cart.
   const handleUpdateQuantity = (productId, quantity, selectedOption = null) => {
     if (quantity <= 0) {
-      // If quantity becomes 0 or less, remove the item.
       handleRemoveFromCart(productId, selectedOption);
     } else {
-      // Otherwise, update the quantity.
       setCart(prevCart =>
         prevCart.map(item => {
           const itemIdentifier = `${item.id}-${item.selectedOption || ''}`;
@@ -956,77 +1403,158 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
     }
   };
 
-  // Handler to clear all items from the cart.
   const handleClearCart = () => {
     setCart([]);
   };
 
-  // Handler for when payment is successfully completed.
   const handlePaymentSuccess = () => {
-    setShowPaymentSuccess(true); // Show the payment success animation.
-    setIsCartOpen(false); // Close the cart sidebar.
-    handleClearCart(); // Clear the cart.
+    setShowPaymentSuccess(true);
+    setIsCartOpen(false);
+    handleClearCart();
   };
 
-  // Handler to hide the payment success animation.
   const handleHidePaymentSuccess = () => {
     setShowPaymentSuccess(false);
   };
 
-  // Memoized calculation of total items in the cart (excluding "coming soon" items).
   const cartItemCount = useMemo(() =>
     cart.reduce((count, item) => (item.comingSoon ? count : count + item.quantity), 0),
     [cart]
   );
 
   return (
-  <div
-    style={{
-      backgroundColor: '#F5F5DC',
-      minHeight: '100vh',
-      overflowX: 'hidden',
-    }}
-  >
-    <main
-      className="container py-5"
+    <div
       style={{
-        marginTop: '90px', // Fixes content shifting under fixed navbar
+        backgroundColor: '#F5F5DC',
+        minHeight: '100vh',
+        overflowX: 'hidden',
       }}
     >
-        {/* Header section with logo, title, and cart button */}
-        <div className="p-4 rounded-3 shadow-sm mb-5 d-flex justify-content-between align-items-center" style={{backgroundColor: '#E9E9D4'}}>
-            <div className="d-flex align-items-center gap-3">
-                <div className="bg-success-subtle p-3 rounded-circle">
-                    <LeafIcon style={{ width: '2em', height: '2em', color: '#1B5E20' }}/>
-                </div>
-                <div>
-                    <h1 className="display-5 fw-bold text-dark mb-1">Gardening Essentials</h1>
-                    <p className="text-secondary mb-0">Everything you need for your urban gardening journey.</p>
-                </div>
+      <main
+        className="container py-5"
+        style={{
+          marginTop: '90px',
+        }}
+      >
+        <div className="p-4 rounded-3 shadow-lg mb-5 d-flex justify-content-between align-items-center header-banner" style={{ backgroundColor: '#E9E9D4', position: 'relative', overflow: 'hidden' }}>
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(45deg, transparent 30%, rgba(40, 167, 69, 0.05) 50%, transparent 70%)',
+            animation: 'shimmer 3s infinite',
+            pointerEvents: 'none'
+          }}></div>
+
+          <div className="d-flex align-items-center gap-3" style={{ position: 'relative', zIndex: 1 }}>
+            <div className="bg-success-subtle p-3 rounded-circle logo-container" style={{
+              background: 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)',
+              boxShadow: '0 4px 12px rgba(40, 167, 69, 0.2)'
+            }}>
+              <LeafIcon style={{ width: '2em', height: '2em', color: '#1B5E20' }} />
             </div>
-            {/* Shopping Cart button with item count badge */}
-            <button onClick={() => setIsCartOpen(true)} className="btn btn-link text-dark position-relative p-0 text-decoration-none">
-                <ShoppingCartIcon style={{ width: '2em', height: '2em' }} />
-                {cartItemCount > 0 && (
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                    {cartItemCount}
-                    <span className="visually-hidden">items in cart</span>
-                  </span>
-                )}
+            <div className="header-text">
+              <h1 className="display-5 fw-bold text-dark mb-1" style={{
+                background: 'linear-gradient(135deg, #1B5E20 0%, #28a745 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>Gardening Essentials</h1>
+              <p className="text-secondary mb-0">Everything you need for your urban gardening journey.</p>
+            </div>
+          </div>
+
+          <div className="d-flex align-items-center gap-3" style={{ position: 'relative', zIndex: 1 }}>
+
+            {isLoggedIn ? (
+              <button
+                onClick={handleLogout}
+                className="btn btn-success d-flex align-items-center gap-2"
+                title={`Logged in as ${currentUser.name}`}
+              >
+                <UserIcon style={{ width: '1.5em', height: '1.5em' }} />
+                Logout
+              </button>
+            ) : (
+              <a
+                href="/login" // <-- This points to your login page
+                className="btn btn-outline-success d-flex align-items-center gap-2"
+                title="Login"
+              >
+                <UserIcon style={{ width: '1.5em', height: '1.5em' }} />
+                Login
+              </a>
+            )}
+
+            <button onClick={() => setIsCartOpen(true)} className="btn btn-link text-dark position-relative p-0 text-decoration-none cart-button">
+              <ShoppingCartIcon style={{ width: '2em', height: '2em' }} />
+              {cartItemCount > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                  {cartItemCount}
+                  <span className="visually-hidden">items in cart</span>
+                </span>
+              )}
             </button>
+          </div>
         </div>
 
-        {/* Product Grid */}
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-          {products.map(product => (
-            <div className="col" key={product.id}>
-              <ProductCard product={product} onAddToCart={handleAddToCart} />
+
+        <div className="row justify-content-center g-4 mb-5 mt-5">
+          {products.filter(p => p.id === 16 || p.id === 17).map((product, index) => (
+            <div
+              className="col-md-6 col-lg-5 product-card-wrapper d-flex"
+              key={product.id}
+              style={{
+                animation: `fadeInUp 0.8s ease-out ${index * 0.2}s both`
+              }}
+            >
+              <div className="w-100" style={{ transition: 'transform 0.3s ease', zIndex: 5 }}>
+                <ProductCard
+                  product={product}
+                  onAddToCart={handleAddToCart}
+                  isLoggedIn={isLoggedIn}
+                  onAskForQuotation={handleAskForQuotation}
+                  onShowLoginToast={() => {
+                    showAppToast('Please login to ask for a quotation.', 'bg-dark');
+                  }}
+                />
+              </div>
             </div>
           ))}
         </div>
-      </main>
 
-      {/* Cart Sidebar component */}
+        <div className="section-divider mb-4 text-center">
+          <h3 className="text-secondary fw-bold position-relative d-inline-block pb-2 border-bottom border-success border-3">
+            Browse Our Collection
+          </h3>
+        </div>
+
+        {/* Regular Products Grid */}
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+          {products.filter(p => p.id !== 16 && p.id !== 17).map((product, index) => (
+            <div
+              className="col product-card-wrapper"
+              key={product.id}
+              style={{
+                animation: `fadeInUp 0.6s ease-out ${index * 0.05}s both`
+              }}
+            >
+              <ProductCard
+                product={product}
+                onAddToCart={handleAddToCart}
+                isLoggedIn={isLoggedIn}
+                onAskForQuotation={handleAskForQuotation}
+                onShowLoginToast={() => {
+                  showAppToast('Please login to ask for a quotation.', 'bg-dark');
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </main >
+
       <CartSidebar
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
@@ -1035,112 +1563,130 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
         onUpdateQuantity={handleUpdateQuantity}
         onClearCart={handleClearCart}
         onPaymentSuccess={handlePaymentSuccess}
-        setShowPaymentFailure={setShowPaymentFailure} // Pass setShowPaymentFailure to CheckoutForm
-        handlePlaceOrder={handlePlaceOrder} // Pass handlePlaceOrder to CheckoutForm
-        isProcessingOrder={isProcessingOrder} // Pass isProcessingOrder to CheckoutForm
-        setIsProcessingOrder={setIsProcessingOrder} // Pass setIsProcessingOrder to CheckoutForm
+        setShowPaymentFailure={setShowPaymentFailure}
+        handlePlaceOrder={handlePlaceOrder}
+        isProcessingOrder={isProcessingOrder}
+        setIsProcessingOrder={setIsProcessingOrder}
       />
 
-      {/* Toast Container for Add to Cart feedback */}
-      {showToast && (
-        <div
-          className="toast show align-items-center text-white bg-success border-0 fade"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1050 }}
-        >
-          <div className="d-flex">
-            <div className="toast-body">
-              {toastMessage}
+      {/* Quotation Modal */}
+      {
+        currentQuotationProduct && (
+          <QuotationModal
+            show={showQuotationModal}
+            onClose={() => setShowQuotationModal(false)}
+            product={currentQuotationProduct}
+            currentUser={currentUser}
+            token={token}
+            onShowToast={showAppToast}
+          />
+        )
+      }
+
+      {
+        showToast && (
+          <div
+            className={`toast show align-items-center text-white ${toastBg} border-0 fade`}
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1050 }}
+          >
+            <div className="d-flex">
+              <div className="toast-body">
+                {toastMessage}
+              </div>
+              <button
+                type="button"
+                className="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+                onClick={() => setShowToast(false)}
+              ></button>
             </div>
-            <button
-              type="button"
-              className="btn-close btn-close-white me-2 m-auto"
-              data-bs-dismiss="toast"
-              aria-label="Close"
-              onClick={() => setShowToast(false)}
-            ></button>
           </div>
-        </div>
-      )}
+        )
+      }
 
-    {/* Payment Success Animation Overlay */}
-    {showPaymentSuccess && (
-        <PaymentSuccessAnimation onHideAnimation={handleHidePaymentSuccess} />
-    )}
+      {
+        showPaymentSuccess && (
+          <PaymentSuccessAnimation onHideAnimation={handleHidePaymentSuccess} />
+        )
+      }
 
-    {/* Payment Failure Animation Overlay*/}
-    {showPaymentFailure && (
-      <PaymentFailureAnimation onHideAnimation={() => setShowPaymentFailure(false)} />
-    )}
+      {
+        showPaymentFailure && (
+          <PaymentFailureAnimation onHideAnimation={() => setShowPaymentFailure(false)} />
+        )
+      }
 
-
-    {/* Global Styles for the application */}
-    <style jsx="true">{`
+      {/* --- All <style jsx="true"> tags remain the same --- */}
+      <style jsx="true">{`
+      /* ============================================
+        GLOBAL STYLES & ANIMATIONS
+        ============================================ */
+      
       html, body {
         overflow-x: hidden !important;
         overflow-y: auto !important;
+        scroll-behavior: smooth;
       }
-
-      /* Apply font to cards */
-      .card {
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        border: none;
-        box-shadow: 0 4px 8px rgba(0,0,0,.05);
-        border-radius: 1rem;
-        background-color: var(--card); /* Uses the updated --card variable (white) */
-        color: var(--card-foreground);
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Removed background-color from transition */
+      
+      /* ============================================
+        KEYFRAME ANIMATIONS
+        ============================================ */
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
       }
-
-      /* Font styles for Product Cards */
-
-      /* Plant Name (e.g., "Tomato Plant", "Rose Plant") */
-      .card-title {
-        font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif; /* Choose one or provide fallbacks */
-        font-weight: 600; /* Semi-Bold */
-        font-size: 1.25rem; /* ~20px, adjusted for responsiveness */
-        color: #1f1f1f; /* Black / Dark grey */
+      
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-
-      /* 💰 Price (e.g., ₹99.00, ₹149.00) */
-      .card-text.text-success.fw-bold {
-        font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif; /* Same as title */
-        font-weight: 600; /* Or 700 for bolder */
-        font-size: 1.125rem; /* ~18px, adjusted for responsiveness */
-        color: #28a745; /* Green */
+      
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3) rotate(-180deg);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.1) rotate(10deg);
+        }
+        70% {
+          transform: scale(0.9) rotate(-5deg);
+        }
+        100% {
+          transform: scale(1) rotate(0);
+        }
       }
-
-      /* 🪴 Subcategory (e.g., "Edible Vegetable Plant", "Flowering Plant") */
-      /* 🪴 Subcategory (e.g., "Edible Vegetable Plant", "Flowering Plant") */
-.card-text.text-muted.small.mb-1 {
-  font-family: 'Poppins', sans-serif; /* Changed to Poppins */
-  font-weight: 400; /* Regular */
-  font-size: 17px; /* Set explicitly to 14px */
-  color: #060707ff; /* Bootstrap Gray-600 */
-  letter-spacing: 0.3px; /* Added letter spacing */
-  margin-top: 4px; /* Added margin top */
-}
-
-      /* 📝 Additional Info (e.g., "Organic starter...", "Available in red...") */
-      .product-description { /* Assuming you add this class to the p tag */
-        font-family: sans-serif; /* Bootstrap's default or specify */
-        font-style: italic;
-        font-weight: 500; /* Medium */
-        font-size: 17px; /* ~14px, adjusted for responsiveness */
-        color: #444; /* Dark Gray or matching category tone */
+      
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
-
-      /* 🔽 Dropdown Label (e.g., "Select Color") */
-      .form-label.small.text-dark {
-        font-size: 0.875rem; /* ~14px, adjusted for responsiveness */
-        font-weight: 500; /* Medium */
-        color: #444; /* Dark Gray */
-      }
-
-      /* Keyframe animations for various effects */
-      @keyframes shine {
+      
+      @keyframes shimmer {
         0% {
           background-position: -200% center;
         }
@@ -1159,8 +1705,249 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
           transform: scale(1.4) rotate(45deg);
         }
       }
+      
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      
+      @keyframes pulse-glow {
+        0%, 100% {
+          box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.4);
+        }
+      }
+      
+      @keyframes bounce-in {
+        0% {
+          opacity: 0;
+          transform: scale(0.3) translateY(20px);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.95);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes gradient-shift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes slideInRight {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes slideInFromRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0.8;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fadeInItem {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.5;
+        }
+      }
+      
+      /* ============================================
+        HEADER ANIMATIONS
+        ============================================ */
+      
+      .header-banner {
+        animation: slideDown 0.6s ease-out;
+      }
+      
+      .logo-container {
+        animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s both;
+      }
+      
+      .header-text h1 {
+        animation: slideInLeft 0.8s ease-out 0.4s both;
+      }
+      
+      .header-text p {
+        animation: slideInLeft 0.8s ease-out 0.6s both;
+      }
+      
+      .cart-button {
+        animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s both;
+      }
+      
+      /* ============================================
+        PRODUCT CARDS
+        ============================================ */
+      
+      .product-card-wrapper {
+        will-change: transform, opacity;
+      }
+      
+      .card {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        border: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,.05);
+        border-radius: 1rem;
+        background-color: #ffffff;
+        color: var(--card-foreground);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform, box-shadow;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(40, 167, 69, 0.1),
+          transparent
+        );
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+        pointer-events: none;
+        opacity: 0;
+      }
+      
+      .card:hover::before {
+        animation: shimmer 1.5s infinite;
+        opacity: 1;
+      }
+      
+      .card:hover {
+          background: linear-gradient(135deg, #ffffff 0%, #f8fff9 100%);
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 
+            0 20px 40px rgba(40, 167, 69, 0.15),
+            0 0 0 1px rgba(40, 167, 69, 0.1),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+      }
+      
+      .card-body {
+        position: relative;
+        z-index: 1;
+      }
+      
+      .card-img-top {
+        transition: transform 0.5s ease, filter 0.3s ease;
+      }
+      
+      .card:hover .card-img-top {
+        transform: scale(1.1) rotate(2deg);
+        filter: brightness(1.05) contrast(1.05);
+      }
+      
+      .card-title {
+        font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: #1f1f1f;
+        transition: color 0.3s ease;
+      }
+      
+      .card:hover .card-title {
+        color: #28a745;
+      }
+      
+      .card-text.text-success.fw-bold {
+        font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+        font-weight: 600;
+        font-size: 1.125rem;
+        color: #28a745;
+        transition: all 0.3s ease;
+      }
+      
+      .card:hover .card-text.text-success.fw-bold {
+        transform: scale(1.1);
+        text-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+      }
+      
+      .card-text.text-muted.small.mb-1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        color: #060707ff;
+        letter-spacing: 0.3px;
+        margin-top: 4px;
+      }
 
-      /* Styles for "Best Seller" and "Coming Soon" badges */
+      .product-description {
+        font-family: sans-serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 17px;
+        color: #444;
+      }
+
+      .form-label.small.text-dark {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #444;
+      }
+      
+      /* ============================================
+        BADGES & LABELS
+        ============================================ */
+      
       .best-seller, .coming-soon {
         position: relative;
         display: inline-flex;
@@ -1174,11 +1961,12 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
         border-radius: 20px;
         border: none;
         box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-        animation: shine 2.5s linear infinite;
+        animation: shimmer 2.5s linear infinite, pulse-glow 2s ease-in-out infinite, float 3s ease-in-out infinite;
         overflow: hidden;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        letter-spacing: 0.5px;
       }
 
-      /* Sparkle effect for badges */
       .best-seller::after, .coming-soon::after {
         content: "";
         position: absolute;
@@ -1193,42 +1981,36 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
           0 0 12px rgba(255, 255, 255, 0.7);
         animation: sparkle 2s ease-in-out infinite;
       }
-
-      /* Styles for main action buttons (Add to Cart, Proceed to Checkout) */
+      
+      .best-seller::before, .coming-soon::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        bottom: 15%;
+        left: 15%;
+        background: radial-gradient(circle, #fff, transparent);
+        border-radius: 50%;
+        box-shadow:
+          0 0 6px rgba(255, 255, 255, 0.8),
+          0 0 10px rgba(255, 255, 255, 0.6);
+        animation: sparkle 2.5s ease-in-out infinite 0.5s;
+      }
+      
+      /* ============================================
+        BUTTONS
+        ============================================ */
+      
       .main-action-button,
       .add-to-cart-button {
-        background-color: #28a745 !important; /* Green */
+        background: linear-gradient(135deg, #28a745 0%, #34ce57 100%) !important;
+        background-size: 200% 200%;
         border: none !important;
         padding: 12px 24px;
         color: white !important;
         font-weight: bold;
         border-radius: 10px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        margin-top: 16px;
-        width: 100%; /* Ensure button takes full width */
-        display: flex; /* Changed from block to flex to center content with gap */
-        align-items: center;
-        justify-content: center;
-        gap: 8px; /* Added gap for icon and text */
-        text-decoration: none; /* Remove any underline if it's a link-like button */
-      }
-
-      .main-action-button:hover,
-      .add-to-cart-button:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 12px rgba(40, 167, 69, 0.3);
-        background-color: #28a745 !important;
-        color: white !important;
-      }
-
-      .coming-soon {
-        background-color: #dc3545 !important; /* Red for coming soon button */
-        border: none !important;
-        padding: 12px 24px;
-        color: white !important;
-        font-weight: bold;
-        border-radius: 10px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         margin-top: 16px;
         width: 100%;
         display: flex;
@@ -1236,32 +2018,136 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
         justify-content: center;
         gap: 8px;
         text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        animation: gradient-shift 3s ease infinite;
+      }
+      
+      .main-action-button::before,
+      .add-to-cart-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+      
+      .main-action-button:hover::before,
+      .add-to-cart-button:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .main-action-button:hover,
+      .add-to-cart-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 
+          0 10px 30px rgba(40, 167, 69, 0.4),
+          0 0 20px rgba(40, 167, 69, 0.2),
+          inset 0 1px 0 rgba(255,255,255,0.3);
+        background: linear-gradient(135deg, #34ce57 0%, #28a745 100%) !important;
+        color: white !important;
+      }
+      
+      .main-action-button:active,
+      .add-to-cart-button:active {
+        transform: translateY(-1px) scale(1.02);
+        transition: all 0.1s ease;
+      }
+      
+      .main-action-button svg,
+      .add-to-cart-button svg {
+        transition: transform 0.3s ease;
+      }
+      
+      .add-to-cart-button:hover svg {
+        transform: rotate(90deg) scale(1.1);
+      }
+      
+      .quotation-button {
+        background: linear-gradient(135deg, #17a2b8 0%, #1fc8e3 100%) !important;
+        box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+      }
+      
+      .quotation-button:hover {
+        background: linear-gradient(135deg, #1fc8e3 0%, #17a2b8 100%) !important;
+        box-shadow: 
+          0 10px 30px rgba(23, 162, 184, 0.4),
+          0 0 20px rgba(23, 162, 184, 0.2);
+      }
+      
+      .quotation-button:hover svg {
+         transform: scale(1.1) translateX(2px);
+      }
+
+      .coming-soon {
+        background: linear-gradient(135deg, #dc3545 0%, #ff4458 100%) !important;
+        background-size: 200% 200%;
+        border: none !important;
+        padding: 12px 24px;
+        color: white !important;
+        font-weight: bold;
+        border-radius: 10px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-top: 16px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        animation: gradient-shift 3s ease infinite, pulse-glow 2s ease-in-out infinite;
+        cursor: not-allowed;
       }
 
       .coming-soon:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-        background: linear-gradient(90deg, #ff4e50 0%, #ff0000 50%, #ff4e50 100%) !important;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 
+          0 10px 30px rgba(220, 53, 69, 0.5),
+          0 0 20px rgba(255, 0, 0, 0.4);
+        background: linear-gradient(135deg, #ff4458 0%, #dc3545 100%) !important;
         color: white !important;
         text-decoration: none;
       }
-
-      /* Form input styles */
+      
+      /* ============================================
+        FORM INPUTS
+        ============================================ */
+      
       form input {
         width: 100%;
         padding: 6px 12px;
         margin-bottom: 12px;
-        border: 1px solid #ccc;
+        border: 2px solid #e0e0d0;
         border-radius: 10px;
-        transition: all 0.3s ease;
-        background-color: #EFEFD8; /* Light tan */
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: #EFEFD8;
         font-size: 0.9rem;
+        position: relative;
       }
 
       form input:focus {
-        border-color: #28a745; /* Green on focus */
-        box-shadow: 0 0 6px rgba(40, 167, 69, 0.2);
+        border-color: #28a745;
+        box-shadow: 
+          0 0 0 3px rgba(40, 167, 69, 0.1),
+          0 4px 12px rgba(40, 167, 69, 0.15);
         outline: none;
+        background-color: #ffffff;
+        transform: translateY(-1px);
+      }
+      
+      form input:hover:not(:focus) {
+        border-color: #b8b8a0;
+        background-color: #f8f8e8;
       }
 
       form label {
@@ -1270,42 +2156,148 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
         display: block;
         color: #444;
         font-size: 0.9rem;
+        transition: color 0.2s ease;
       }
-
-      /* Invalid form field feedback styles */
+      
+      form input:focus + label,
+      form input:focus ~ label {
+        color: #28a745;
+      }
+      
       form .form-control.is-invalid {
-        border-color: #dc3545; /* Red */
+        border-color: #dc3545;
         padding-right: calc(1.5em + 0.75rem);
         background-image: none;
       }
+      
       form .invalid-feedback {
         display: block;
         margin-top: -8px;
         margin-bottom: 8px;
         font-size: 0.875em;
-        color: #dc3545; /* Red */
+        color: #dc3545;
       }
-
-      /* Product card hover effect */
-      .card:hover {
-          background-color: var(--secondary); /* Uses the updated --secondary variable (white) */
-          transform: translateY(-5px);
-          box-shadow: 0 8px 16px rgba(0,0,0,.15);
+      
+      .form-select {
+        transition: all 0.3s ease;
       }
-
-      .section-padding {
-          padding-top: 80px;
-          padding-bottom: 80px;
+      
+      .form-select:focus {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
       }
-
-      /* Emoji styling within cards */
+      
+      /* ============================================
+        SHOPPING CART & ICONS
+        ============================================ */
+      
+      .btn-link svg {
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      
+      .btn-link:hover svg {
+        transform: scale(1.2) rotate(5deg);
+        color: #28a745 !important;
+        filter: drop-shadow(0 4px 8px rgba(40, 167, 69, 0.3));
+      }
+      
+      .badge {
+        animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s ease;
+      }
+      
+      .btn-link:hover .badge {
+        transform: scale(1.15);
+        box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+      }
+      
+      /* ============================================
+        TOAST NOTIFICATIONS
+        ============================================ */
+      
+      .toast {
+        animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        border-left: 4px solid #ffffff;
+      }
+      
+      /* ============================================
+        OFFCANVAS CART SIDEBAR
+        ============================================ */
+      
+      .offcanvas {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .offcanvas.show {
+        animation: slideInFromRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .cart-item-animate {
+        animation: fadeInItem 0.3s ease-out both;
+      }
+      
+      .offcanvas-body > div > div:nth-child(1) { animation-delay: 0.05s; }
+      .offcanvas-body > div > div:nth-child(2) { animation-delay: 0.1s; }
+      .offcanvas-body > div > div:nth-child(3) { animation-delay: 0.15s; }
+      .offcanvas-body > div > div:nth-child(4) { animation-delay: 0.2s; }
+      .offcanvas-body > div > div:nth-child(5) { animation-delay: 0.25s; }
+      
+      .offcanvas-backdrop {
+        transition: opacity 0.3s ease;
+      }
+      
+      .offcanvas-backdrop.show {
+        animation: fadeIn 0.3s ease;
+      }
+      
+      /* ============================================
+        CART ITEM CONTROLS
+        ============================================ */
+      
+      .btn-outline-secondary {
+        transition: all 0.2s ease;
+      }
+      
+      .btn-outline-secondary:hover:not(:disabled) {
+        transform: scale(1.15);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      }
+      
+      .btn-outline-secondary:active:not(:disabled) {
+        transform: scale(0.95);
+      }
+      
+      .btn-outline-danger {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .btn-outline-danger:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+      }
+      
+      /* ============================================
+        EMOJI STYLING
+        ============================================ */
+      
       .card-emoji {
           font-size: 3rem;
           line-height: 1;
           margin-bottom: 1rem;
           display: inline-block;
+          animation: float 3s ease-in-out infinite;
+          filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
       }
-
+      
+      .card:hover .card-emoji {
+        animation: float 3s ease-in-out infinite, spin-slow 10s linear infinite;
+      }
+      
+      /* ============================================
+        IMAGE PLACEHOLDERS
+        ============================================ */
+      
       .image-placeholder {
           background-color: var(--muted);
           display: flex;
@@ -1318,197 +2310,68 @@ export default function Page() { // Renamed from MainAppContent to Page as per o
           border-top-right-radius: 1rem;
           overflow: hidden;
       }
+      
       .image-placeholder img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-
+      
+      /* ============================================
+        RESPONSIVE MOBILE STYLES
+        ============================================ */
+      
+      @media (max-width: 767.98px) {
+        .header-banner {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+        
+        .header-text h1 {
+          font-size: 1.75rem;
+        }
+        
+        .card-title {
+          font-size: 1.1rem;
+        }
+        
+        .card-text.text-success.fw-bold {
+          font-size: 1rem;
+        }
+      }
+      
+      /* ============================================
+        UTILITY CLASSES
+        ============================================ */
+      
       .cta-section h2, .cta-section p {
           color: white;
       }
+      
       .cta-section p {
           opacity: 0.9;
       }
-
-      /* Navbar centering */
-      .navbar-nav-center {
-        margin-left: auto;
-        margin-right: auto;
-        flex-grow: 1;
-        justify-content: center;
+      
+      /* ============================================
+        PERFORMANCE OPTIMIZATIONS
+        ============================================ */
+      
+      .card,
+      .main-action-button,
+      .add-to-cart-button,
+      .product-card-wrapper {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      /* Adjust for small screens where navbar items stack */
-      @media (max-width: 991.98px) {
-        .navbar-nav-center {
-          justify-content: flex-start;
-          margin-left: 0;
-          margin-right: 0;
-        }
+      
+      /* Enable GPU acceleration for smoother animations */
+      .card:hover,
+      .main-action-button:hover,
+      .add-to-cart-button:hover {
+        will-change: transform;
       }
-
-      .navbar-nav .nav-link {
-          border-radius: var(--radius);
-          font-size: 1.15rem;
-          color: var(--foreground);
-          font-weight: 400;
-          padding: 0.5rem 0.75rem;
-          transition: background-color 0.2s ease, color 0.2s ease;
-      }
-      .navbar-nav .nav-link.active {
-          font-weight: 600;
-          background-color: transparent;
-      }
-      /* Hover effect for navbar links */
-      .navbar-nav .nav-link:not(.active):hover {
-        background-color: hsl(60, 30%, 80%);
-        color: var(--foreground);
-      }
-      .navbar-nav .nav-link.active:hover {
-         background-color: transparent;
-         color: var(--foreground);
-      }
-
-      .navbar-brand img {
-          /* No specific border-radius needed if the image itself is designed with it */
-      }
-
-    /* Profile icon container and dropdown positioning */
-    .profile-icon-container {
-      position: relative;
-      margin-left: 1.5rem;
-    }
-    .profile-icon-container button.nav-link {
-      cursor: pointer;
-      transition: color 0.2s ease-in-out, background-color 0.2s ease;
-      padding: 0.5rem 0.75rem;
-      border-radius: var(--radius);
-      color: var(--foreground);
-      background-color: transparent;
-    }
-    .profile-icon-container button.nav-link:hover {
-      background-color: hsl(60, 30%, 80%);
-      color: var(--foreground);
-    }
-      .profile-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        box-shadow: 0 4px 8px rgba(0,0,0,.1);
-        min-width: 160px;
-        z-index: 1001;
-        padding: 0;
-        text-align: left;
-        transform: translateY(5px);
-      }
-      .profile-dropdown .dropdown-item {
-        display: block;
-        padding: 0.5rem 1rem;
-        color: var(--foreground);
-        text-decoration: none;
-        cursor: pointer;
-        white-space: nowrap;
-      }
-      .profile-dropdown .dropdown-item:hover {
-        background-color: var(--secondary);
-      }
-      .profile-dropdown .dropdown-title {
-        padding: 0.5rem 1rem;
-        font-weight: 600;
-        color: var(--foreground);
-        border-bottom: 1px solid var(--border);
-        margin-bottom: 0.25rem;
-      }
-
-      /* Ensure consistent vertical alignment for nav items */
-      .navbar-nav .nav-item {
-        display: flex;
-        align-items: center;
-      }
-
-      /* Media Queries for Mobile */
-      @media (max-width: 767.98px) {
-        .navbar-nav .nav-link {
-          font-size: 1rem; /* Slightly smaller font for mobile */
-          padding: 0.4rem 0.6rem;
-        }
-
-        /* Ensure navbar-collapse takes full width and items are stacked */
-        .navbar-collapse {
-          width: 100%;
-        }
-
-        /* Make the nav items stack vertically within the collapsed navbar */
-        .navbar-nav {
-          flex-direction: column !important; /* Override Bootstrap's default flex-direction */
-          margin-top: 0.5rem; /* Add some space below the toggle button */
-        }
-
-        .navbar-nav .nav-item {
-          width: 100%; /* Make each item take the full width */
-          text-align: center; /* Center the text within each item */
-        }
-
-        .navbar-nav .nav-link {
-          display: block; /* Make the link fill the entire item */
-          padding: 0.75rem 1rem; /* Add more padding for touch targets */
-          border-bottom: 1px solid var(--border); /* Optional: Add dividers between links */
-        }
-
-        .navbar-nav .nav-link:last-child {
-          border-bottom: none; /* Remove the bottom border from the last item */
-        }
-
-        /* Adjust profile dropdown for mobile */
-        .profile-icon-container {
-          margin-left: 0; /* Reset margin */
-          width: 100%; /* Full width */
-          text-align: center; /* Center align */
-          margin-top: 0.5rem; /* Add some spacing */
-        }
-        .profile-dropdown {
-          position: static; /* Flow with the content */
-          width: 100%; /* Full width */
-          border-top: 1px solid var(--border); /* Add a top border to separate */
-          box-shadow: none; /* Remove shadow */
-          transform: translateY(0); /* Reset transform */
-        }
-        .profile-dropdown .dropdown-title {
-          border-bottom: none; /* Remove extra bottom border */
-        }
-      }
-        /* Original navbar state (not scrolled) */
-.navbar-fixed-top {
-  background-color: hsla(60, 56%, 93%, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-/* Scrolled state */
-.navbar-fixed-top.scrolled {
-  background-color: hsla(60, 56%, 93%, 0.8);
-  box-shadow: 0 2px 4px rgba(0,0,0,.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* State for specific pages that don't need blur */
-.navbar-fixed-top.no-blur {
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-/* Active navigation link */
-.navbar-nav .nav-link.active {
-  font-weight: 600; /* Or any other style */
-  color: var(--primary); /* Example color */
-}
-        `}
-      </style>
-    </div>
+    `}</style>
+    </div >
   );
 }

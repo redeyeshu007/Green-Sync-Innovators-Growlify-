@@ -2,11 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-const API_BASE_URL = 'http://localhost:5000/api';
-const getAuthToken = () => localStorage.getItem('token');
-const API_KEY = process.env.WEATHER_API_KEY; // Your OpenWeatherMap API Key
+const API_BASE_URL = 'http://localhost:5002/api';
+const API_KEY = 'ef652dd7f8c85f6eba1ecb4dc26a9fe4'; // Your OpenWeatherMap API Key
 
-const Profile = () => { // Removed onNavigate prop
+// --- This function is already correct ---
+const getAuthToken = () => {
+  const userInfo = localStorage.getItem('userInfo');
+  if (userInfo) {
+    return JSON.parse(userInfo).token; // Get the token from the userInfo object
+  }
+  return null;
+};
+
+const Profile = () => {
   const navigate = useNavigate(); // Initialize useNavigate hook
 
   const [fullName, setFullName] = useState('');
@@ -14,7 +22,7 @@ const Profile = () => { // Removed onNavigate prop
   const [location, setLocation] = useState('');
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [pushNotifications, setPushNotifications] = useState(false);
-  
+
   // States for weather information
   const [weatherData, setWeatherData] = useState(null);
   const [weatherLoading, setWeatherLoading] = useState(false);
@@ -26,13 +34,16 @@ const Profile = () => { // Removed onNavigate prop
   // Effect to load initial user data from localStorage and then fetch from backend
   useEffect(() => {
     // 1. Load from localStorage for immediate display
-    const storedUser = localStorage.getItem('currentUser');
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      setFullName(user.name || '');
-      setEmailAddress(user.email || '');
-      setLocation(user.city || '');
-      setEmailNotifications(user.emailNotifications || false);
+    // --- This is also correct ---
+    const storedUserInfo = localStorage.getItem('userInfo');
+    if (storedUserInfo) {
+      const { user } = JSON.parse(storedUserInfo); // Destructure the 'user' object
+      if (user) {
+        setFullName(user.name || '');
+        setEmailAddress(user.email || '');
+        setLocation(user.city || ''); // Use 'city' which your login page saves
+        setEmailNotifications(user.emailNotifications || false);
+      }
     }
 
     // 2. Fetch fresh data from the backend
@@ -41,8 +52,9 @@ const Profile = () => { // Removed onNavigate prop
         const token = getAuthToken();
         if (!token) return;
 
+        // --- This header is already correct ---
         const response = await axios.get(`${API_BASE_URL}/profile`, {
-          headers: { 'x-auth-token': token }
+          headers: { 'Authorization': `Bearer ${token}` }
         });
 
         const user = response.data;
@@ -51,8 +63,10 @@ const Profile = () => { // Removed onNavigate prop
         setLocation(user.city || '');
         setEmailNotifications(user.emailNotifications || false);
 
-        // Update localStorage with the latest data
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        // Update localStorage with the latest data in the *correct format*
+        // We get the token again just in case, but it's mainly to keep the structure
+        const currentToken = getAuthToken();
+        localStorage.setItem('userInfo', JSON.stringify({ user: user, token: currentToken }));
       } catch (err) {
         console.error("Error fetching profile:", err);
       }
@@ -96,12 +110,13 @@ const Profile = () => { // Removed onNavigate prop
       const token = getAuthToken();
       if (!token) return;
 
+      // --- This header is also correct ---
       const response = await axios.put(`${API_BASE_URL}/profile`, updates, {
-        headers: { 'x-auth-token': token }
+        headers: { 'Authorization': `Bearer ${token}` }
       });
 
-      // Update local storage with the new data from the response
-      localStorage.setItem('currentUser', JSON.stringify(response.data));
+      // Update local storage with the new data from the response, keeping the token
+      localStorage.setItem('userInfo', JSON.stringify({ user: response.data, token: token }));
     } catch (err) {
       console.error('Failed to save profile changes:', err);
     }
@@ -140,7 +155,7 @@ const Profile = () => { // Removed onNavigate prop
     // You can add a debounce here as well if you want
     saveProfileChanges({ name: newName });
   };
-  
+
   // Handle email notification toggle
   const handleEmailNotificationsToggle = async () => {
     const newValue = !emailNotifications;
@@ -216,7 +231,7 @@ const Profile = () => { // Removed onNavigate prop
                   className="form-control"
                   id="fullName"
                   value={fullName}
-                   readOnly
+                  // This was already correct in your file, allowing editing
                   onChange={handleFullNameChange}
                   style={styles.inputField}
                 />
@@ -245,6 +260,7 @@ const Profile = () => { // Removed onNavigate prop
                       textDecoration: 'none',
                       cursor: 'pointer',
                       display: 'inline',
+                      marginLeft: '5px' // Added spacing
                     }}
                   >
                     Contact support

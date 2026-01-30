@@ -1,0 +1,60 @@
+[2025-11-05 15:49:13] [ERROR]: ❌ Contact form submission failed: missing fields
+[2025-11-07 22:40:02] [ERROR]: ❌ Razorpay order creation failed: Cannot read properties of undefined (reading 'status')
+[2025-11-07 22:47:32] [ERROR]: Auth failed: Not authorized, user not found
+[2025-11-07 22:55:01] [ERROR]: Auth failed: Not authorized, user not found
+[2025-11-08 02:38:03] [ERROR]: ❌ Razorpay order creation failed: Cannot read properties of undefined (reading 'status')
+[2025-11-08 13:09:11] [ERROR]: Error fetching weather for
+[2026-01-25 18:03:42] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:34:29] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:36:54] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:39:15] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:42:50] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:46:14] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-29 21:44:41] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:00:22] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:02:58] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:04:21] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:05:48] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:31:28] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:33:04] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:37:32] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:50:00] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:57:54] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 23:50:59] [ERROR]: ❌ Failed to send email to sudharsane23cs@psnacet.edu.in: self-signed certificate in certificate chain
+[2026-01-29 23:53:01] [ERROR]: ❌ Failed to send email to sudharsane23cs@psnacet.edu.in: self-signed certificate in certificate chain
+[2026-01-29 23:53:23] [ERROR]: ❌ Failed to send email to sudharsanelangovan2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-29 23:55:01] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-29 23:55:40] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-29 23:57:18] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-30 00:02:09] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-30 02:35:02] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:35:24] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:42] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:42] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:42] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:45] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:45] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:45] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:46] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:46] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:46] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:47] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:47] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:47] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:50] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:51] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:57] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:38:31] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:38:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 04:40:00] [ERROR]: ❌ Failed to send email to prdharanish88@gmail.com: self-signed certificate in certificate chain
+[2026-01-30 04:42:46] [ERROR]: [SEND OTP ERROR] sendEmail is not a function
+[2026-01-30 05:30:35] [ERROR]: Error fetching weather for
+[2026-01-30 05:34:22] [ERROR]: Error fetching weather for
+[2026-01-30 05:37:22] [ERROR]: ❌ Failed to send email to prdharanish8@gmail.com: read ECONNRESET

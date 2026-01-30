@@ -1,9 +1,1017 @@
-[2025-07-27 11:09:30] [INFO]: ✅ MongoDB connected successfully
-[2025-07-27 11:09:30] [INFO]: 🌿 Growlify backend running on http://localhost:5000
-[2025-07-27 11:09:31] [INFO]: MongoDB connected successfully
-[2025-07-27 11:12:29] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
-[2025-07-27 11:12:29] [INFO]: [OTP] Sent signup OTP to vijaykasthuri777@gmail.com
-[2025-07-27 11:13:01] [INFO]: [SIGNUP] New user registered: vijaykasthuri777@gmail.com
-[2025-07-27 11:13:09] [INFO]: [LOGIN] User logged in: vijaykasthuri777@gmail.com
-[2025-07-27 12:00:00] [INFO]: [NODE-CRON] Running watering reminder at 12:00 (Outdoor)
-[2025-07-27 12:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2025-11-05 13:09:07] [INFO]: ✅ MongoDB connected successfully
+[2025-11-05 13:09:07] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-05 13:09:07] [INFO]: MongoDB connected successfully
+[2025-11-05 13:11:00] [WARN]: [OTP] Attempt to generate OTP for existing user: dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-05 13:11:15] [INFO]: ✅ Email sent successfully to dinnypaul007@gmail.com
+[2025-11-05 13:11:15] [INFO]: [OTP] Sent signup OTP to dinnypaul007@gmail.com
+[2025-11-05 13:11:44] [INFO]: [SIGNUP] New user registered: dinnypaul007@gmail.com
+[2025-11-05 13:12:04] [INFO]: [LOGIN] User logged in: dinnypaul007@gmail.com
+[2025-11-05 13:12:11] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:12:11] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:25:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:25:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:31:25] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:33:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:33:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:34:20] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:34:20] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:34:30] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:34:30] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:34:46] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:34:46] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:35:47] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:45:33] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:45:54] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:45:54] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:46:31] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:46:31] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:46:51] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:46:51] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:47:42] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 13:47:42] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:02:03] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:02:03] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:07:49] [INFO]: [ADD PLANT] New plant added for user 690affb80992149f9a090d14: 690b0cdd0992149f9a090d33
+[2025-11-05 14:07:49] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:08:16] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:08:16] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:08:38] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:08:38] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:11:35] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:11:35] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:14:05] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:14:05] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:14:43] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:14:43] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:22:24] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:24:32] [INFO]: [DELETE PLANT] Plant 690b0cdd0992149f9a090d33 deleted for user 690affb80992149f9a090d14
+[2025-11-05 14:24:32] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690affb80992149f9a090d14
+[2025-11-05 14:26:01] [WARN]: [LOGIN] Invalid password for amaljesmas@gmail.com
+[2025-11-05 14:29:24] [INFO]: ✅ Email sent successfully to dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-05 14:29:24] [INFO]: [OTP] Sent signup OTP to dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-05 14:30:03] [INFO]: [SIGNUP] New user registered: dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-05 14:30:10] [INFO]: [LOGIN] User logged in: dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-05 14:30:12] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690b12130992149f9a090d46
+[2025-11-05 14:30:12] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690b12130992149f9a090d46
+[2025-11-05 14:30:55] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690b12130992149f9a090d46
+[2025-11-05 14:31:19] [INFO]: [ADD PLANT] New plant added for user 690b12130992149f9a090d46: 690b125f0992149f9a090d4f
+[2025-11-05 14:31:19] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690b12130992149f9a090d46
+[2025-11-05 14:31:30] [INFO]: [DELETE PLANT] Plant 690b125f0992149f9a090d4f deleted for user 690b12130992149f9a090d46
+[2025-11-05 14:31:30] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690b12130992149f9a090d46
+[2025-11-05 14:31:50] [INFO]: [ADD PLANT] New plant added for user 690b12130992149f9a090d46: 690b127e0992149f9a090d55
+[2025-11-05 14:31:50] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690b12130992149f9a090d46
+[2025-11-05 14:44:01] [INFO]: [ADD PLANT] New plant added for user 690b12130992149f9a090d46: 690b15590992149f9a090d59
+[2025-11-05 14:44:01] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690b12130992149f9a090d46
+[2025-11-05 14:46:37] [INFO]: [ADD PLANT] New plant added for user 690b12130992149f9a090d46: 690b15f50992149f9a090d5d
+[2025-11-05 14:46:37] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 15:05:54] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 15:05:54] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 15:37:41] [INFO]: 📩 Contact email received from dinnypaulnavisc23cs@psnacet.edu.in by Denilah Pauline C
+[2025-11-05 15:39:44] [INFO]: 📩 Contact email received from dinnypaulnavisc23cs@psnacet.edu.in by Denilah Pauline C
+[2025-11-05 15:49:13] [ERROR]: ❌ Contact form submission failed: missing fields
+[2025-11-05 15:49:50] [INFO]: 📩 Contact email received from olusakthik23cs@psnacet.edu.in by olu sakthi
+[2025-11-05 16:11:02] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:11:02] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:11:09] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:11:09] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:21:03] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:21:03] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:26:10] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:26:10] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:31:18] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 16:31:18] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 17:59:32] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 17:59:32] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 18:00:00] [INFO]: [NODE-CRON] Running watering reminder at 18:09 (Indoor - Evening)
+[2025-11-05 18:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-05 18:00:00] [INFO]: [NODE-CRON] Running watering reminder at 18:00 (Balcony)
+[2025-11-05 18:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Balcony
+[2025-11-05 18:00:03] [INFO]: ✅ Email sent successfully to amaljesmas@gmail.com
+[2025-11-05 18:00:03] [INFO]: [EMAIL SENT] to amaljesmas@gmail.com for dq
+[2025-11-05 18:00:03] [WARN]: [SKIP] Missing user data for plant "wgwe" — userId: 68695128e997799b0054a76c
+[2025-11-05 18:00:03] [WARN]: [SKIP] Missing user data for plant "wfe" — userId: 68695128e997799b0054a76c
+[2025-11-05 18:00:03] [WARN]: [SKIP] Missing user data for plant "olu" — userId: 687e469b29e776d7c2e6e2e4
+[2025-11-05 18:00:03] [WARN]: [SKIP] Missing user data for plant "gbku" — userId: 687e469b29e776d7c2e6e2e4
+[2025-11-05 18:00:06] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2025-11-05 18:00:06] [INFO]: [EMAIL SENT] to dinnynavis@gmail.com for cherry
+[2025-11-05 18:00:09] [INFO]: ✅ Email sent successfully to dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-05 18:00:09] [INFO]: [EMAIL SENT] to dinnypaulnavisc23cs@psnacet.edu.in for t4w
+[2025-11-05 18:00:12] [INFO]: ✅ Email sent successfully to dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-05 18:00:12] [INFO]: [EMAIL SENT] to dinnypaulnavisc23cs@psnacet.edu.in for i
+[2025-11-05 18:25:10] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-05 18:25:10] [INFO]: [GET PLANTS] Retrieved 3 plants for user 690b12130992149f9a090d46
+[2025-11-06 10:45:06] [INFO]: ✅ MongoDB connected successfully
+[2025-11-06 10:45:06] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-06 10:45:06] [INFO]: MongoDB connected successfully
+[2025-11-06 10:45:26] [INFO]: [ADD PLANT] New plant added for user 690b12130992149f9a090d46: 690c2eeee3c94c824c7f2410
+[2025-11-06 10:45:27] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 10:46:39] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 10:46:39] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 10:46:43] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 10:46:43] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:16:05] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:16:05] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:18:40] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:18:40] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:20:54] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:20:54] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:21:25] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:21:25] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:22:19] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:22:19] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:22:34] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:22:34] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:13] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:13] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:21] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:21] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:49] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:49] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:53] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:23:53] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:24:17] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:24:17] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:25:29] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:25:29] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:47:13] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:47:13] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:47:31] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:47:31] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:48:32] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:48:32] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 11:48:59] [INFO]: 📩 Contact email received from olusakthik23cs@psnacet.edu.in by olu sakthi
+[2025-11-06 12:00:00] [INFO]: [NODE-CRON] Running watering reminder at 12:00 (Outdoor)
+[2025-11-06 12:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2025-11-06 12:00:05] [INFO]: ✅ Email sent successfully to amaljesmas@gmail.com
+[2025-11-06 12:00:05] [INFO]: [EMAIL SENT] to amaljesmas@gmail.com for amal plant 
+[2025-11-06 12:00:05] [WARN]: [SKIP] Missing user data for plant "qd" — userId: 68695128e997799b0054a76c
+[2025-11-06 12:00:12] [INFO]: ✅ Email sent successfully to dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-06 12:00:12] [INFO]: [EMAIL SENT] to dinnypaulnavisc23cs@psnacet.edu.in for www
+[2025-11-06 12:18:48] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:18:48] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:18:59] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:18:59] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:19:05] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:19:05] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:25:30] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:25:30] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:37:13] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 12:37:13] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 13:05:02] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 13:05:02] [INFO]: [GET PLANTS] Retrieved 4 plants for user 690b12130992149f9a090d46
+[2025-11-06 13:08:46] [WARN]: [LOGIN] Invalid email: denilahpauline@gmail.com
+[2025-11-06 13:09:54] [INFO]: ✅ Email sent successfully to dinnypaul007@gmail.com
+[2025-11-06 13:09:54] [INFO]: [RESET OTP] Sent password reset OTP to dinnypaul007@gmail.com
+[2025-11-06 13:11:02] [WARN]: [RESET PASSWORD] Invalid/expired OTP for dinnypaul007@gmail.com
+[2025-11-06 13:11:16] [INFO]: [RESET PASSWORD] Password reset successful for dinnypaul007@gmail.com
+[2025-11-06 13:11:41] [WARN]: [LOGIN] Invalid email: dinnynavis007@gmail.com
+[2025-11-06 13:11:55] [WARN]: [LOGIN] Invalid email: dinnynavis007@gmail.com
+[2025-11-06 13:12:02] [WARN]: [LOGIN] Invalid email: dinnynavis007@gmail.com
+[2025-11-06 13:12:38] [WARN]: [LOGIN] Invalid password for dinnypaulnavisc23cs@psnacet.edu.in
+[2025-11-06 13:14:02] [WARN]: [LOGIN] Invalid password for dinnypaul007@gmail.com
+[2025-11-06 13:15:03] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2025-11-06 13:15:03] [INFO]: [RESET OTP] Sent password reset OTP to dinnynavis@gmail.com
+[2025-11-06 13:15:49] [WARN]: [RESET PASSWORD] Weak password attempt by dinnynavis@gmail.com
+[2025-11-06 13:16:20] [INFO]: [RESET PASSWORD] Password reset successful for dinnynavis@gmail.com
+[2025-11-06 13:16:41] [INFO]: [LOGIN] User logged in: dinnynavis@gmail.com
+[2025-11-06 13:16:47] [INFO]: [GET PLANTS] Retrieved 1 plants for user 688a2745ae4d02053a1ab415
+[2025-11-06 13:16:47] [INFO]: [GET PLANTS] Retrieved 1 plants for user 688a2745ae4d02053a1ab415
+[2025-11-07 12:19:55] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 12:19:55] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 12:19:55] [INFO]: MongoDB connected successfully
+[2025-11-07 12:20:07] [INFO]: [LOGIN] User logged in: dinnynavis@gmail.com
+[2025-11-07 12:20:13] [INFO]: [GET PLANTS] Retrieved 1 plants for user 688a2745ae4d02053a1ab415
+[2025-11-07 12:20:13] [INFO]: [GET PLANTS] Retrieved 1 plants for user 688a2745ae4d02053a1ab415
+[2025-11-07 13:56:42] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 13:56:42] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 13:56:42] [INFO]: MongoDB connected successfully
+[2025-11-07 14:08:29] [WARN]: Auth failed: No token provided.
+[2025-11-07 14:18:01] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 14:18:01] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 14:18:01] [INFO]: MongoDB connected successfully
+[2025-11-07 14:18:49] [WARN]: Auth failed: No token provided.
+[2025-11-07 14:33:44] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 14:33:44] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 14:33:44] [INFO]: MongoDB connected successfully
+[2025-11-07 14:41:02] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 14:41:02] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 14:41:02] [INFO]: MongoDB connected successfully
+[2025-11-07 14:41:54] [ERROR]: Failed to send OTP to dinnypaulnavisc23cs@psnacet.edu.in: Missing credentials for "PLAIN"
+[2025-11-07 14:47:12] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 14:47:12] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 14:47:12] [INFO]: MongoDB connected successfully
+[2025-11-07 14:47:42] [ERROR]: Failed to send OTP to dinnynavis@gmail.com: Missing credentials for "PLAIN"
+[2025-11-07 14:49:16] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 14:49:16] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 14:49:16] [INFO]: MongoDB connected successfully
+[2025-11-07 14:49:25] [INFO]: Signup OTP sent to dinnynavis@gmail.com
+[2025-11-07 14:49:52] [INFO]: New user registered: dinnynavis@gmail.com
+[2025-11-07 14:50:04] [INFO]: User logged in: dinnynavis@gmail.com
+[2025-11-07 15:01:17] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 15:01:17] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 15:01:17] [INFO]: MongoDB connected successfully
+[2025-11-07 15:02:05] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 15:02:05] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 15:02:05] [INFO]: MongoDB connected successfully
+[2025-11-07 15:02:12] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 15:07:26] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 15:07:26] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 15:07:26] [INFO]: MongoDB connected successfully
+[2025-11-07 15:08:15] [INFO]: Quotation email sent to dinnynavis@gmail.com for user dinnynavis@gmail.com
+[2025-11-07 15:08:15] [INFO]: Deleted temp PDF: D:\Growlifynew\Growlify1\Growlify1\Growlify\my-app\backend\temp\quotation_690db9b849eba59db0b8455a_1762508276354.pdf
+[2025-11-07 15:10:29] [INFO]: Created Razorpay order: order_RcnuThnOgpQ33j
+[2025-11-07 15:10:50] [INFO]: ✅ Payment Successful! Order data received.
+[2025-11-07 15:10:50] [INFO]: User: dinnynavis@gmail.com, Payment ID: pay_RcnuagSLNEMouX
+[2025-11-07 15:21:13] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:11:31] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:32:50] [INFO]: Quotation email sent to dinnynavis@gmail.com for user dinnynavis@gmail.com
+[2025-11-07 16:32:51] [INFO]: Deleted temp PDF: D:\Growlifynew\Growlify1\Growlify1\Growlify\my-app\backend\temp\quotation_690db9b849eba59db0b8455a_1762513364702.pdf
+[2025-11-07 16:33:33] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:05] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:12] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:13] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:14] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:20] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:21] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:30] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:34] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:38] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:41] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:42] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 16:37:43] [INFO]: Profile updated for dinnynavis@gmail.com
+[2025-11-07 18:00:00] [INFO]: [NODE-CRON] Running watering reminder at 18:09 (Indoor - Evening)
+[2025-11-07 18:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-07 18:00:00] [INFO]: [NODE-CRON] Running watering reminder at 18:00 (Balcony)
+[2025-11-07 18:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Balcony
+[2025-11-07 18:30:00] [INFO]: [NODE-CRON] Running watering reminder at 18:30 (Outdoor)
+[2025-11-07 18:30:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2025-11-07 18:54:48] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 18:54:48] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 18:54:48] [INFO]: MongoDB connected successfully
+[2025-11-07 18:55:09] [INFO]: Quotation email sent to dinnynavis@gmail.com for user dinnynavis@gmail.com
+[2025-11-07 18:55:09] [INFO]: Deleted temp PDF: D:\Growlifynew\Growlify1\Growlify1\Growlify\my-app\backend\temp\quotation_690db9b849eba59db0b8455a_1762521903189.pdf
+[2025-11-07 19:03:03] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:03:03] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:03:03] [INFO]: MongoDB connected successfully
+[2025-11-07 19:03:18] [INFO]: Quotation email sent to dinnynavis@gmail.com for user dinnynavis@gmail.com
+[2025-11-07 19:03:18] [INFO]: Deleted temp PDF: D:\Growlifynew\Growlify1\Growlify1\Growlify\my-app\backend\temp\quotation_690db9b849eba59db0b8455a_1762522391844.pdf
+[2025-11-07 19:10:17] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:10:17] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:10:17] [INFO]: MongoDB connected successfully
+[2025-11-07 19:13:10] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:13:10] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:13:10] [INFO]: MongoDB connected successfully
+[2025-11-07 19:13:23] [INFO]: Quotation email sent to dinnynavis@gmail.com (user: dinnynavis@gmail.com)
+[2025-11-07 19:13:23] [INFO]: Deleted temp PDF: D:\Growlifynew\Growlify1\Growlify1\Growlify\my-app\backend\temp\quotation_690db9b849eba59db0b8455a_1762522996049.pdf
+[2025-11-07 19:39:45] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:39:45] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:39:45] [INFO]: MongoDB connected successfully
+[2025-11-07 19:40:05] [INFO]: Quotation email sent to dinnynavis@gmail.com (user: dinnynavis@gmail.com)
+[2025-11-07 19:40:05] [INFO]: Deleted temp PDF: D:\Growlifynew\Growlify1\Growlify1\Growlify\my-app\backend\temp\quotation_690db9b849eba59db0b8455a_1762524598899.pdf
+[2025-11-07 19:42:51] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:42:51] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:42:51] [INFO]: MongoDB connected successfully
+[2025-11-07 19:43:22] [INFO]: Quotation email sent to dinnypaulnavisc23cs@psnacet.edu.in (user: dinnynavis@gmail.com)
+[2025-11-07 19:43:22] [INFO]: Deleted temp PDF: D:\Growlifynew\Growlify1\Growlify1\Growlify\my-app\backend\temp\quotation_690db9b849eba59db0b8455a_1762524794315.pdf
+[2025-11-07 19:51:26] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:51:26] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:51:26] [INFO]: MongoDB connected successfully
+[2025-11-07 19:53:25] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:53:25] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:53:25] [INFO]: MongoDB connected successfully
+[2025-11-07 19:58:12] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 19:58:12] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 19:58:12] [INFO]: MongoDB connected successfully
+[2025-11-07 20:27:55] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 20:27:55] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 20:27:55] [INFO]: MongoDB connected successfully
+[2025-11-07 21:19:32] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 21:19:32] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 21:19:32] [INFO]: MongoDB connected successfully
+[2025-11-07 21:20:04] [INFO]: Signup OTP sent to sudharsane23cs@psnacet.edu.in
+[2025-11-07 21:20:28] [INFO]: New user registered: sudharsane23cs@psnacet.edu.in
+[2025-11-07 21:20:37] [INFO]: User logged in: sudharsane23cs@psnacet.edu.in
+[2025-11-07 21:21:37] [INFO]: Profile updated for sudharsane23cs@psnacet.edu.in
+[2025-11-07 21:51:45] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 21:51:45] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 21:51:45] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 21:54:28] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 21:54:28] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 21:54:28] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 21:55:13] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 21:55:13] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 21:55:13] [INFO]: MongoDB connected successfully
+[2025-11-07 22:16:06] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2025-11-07 22:16:06] [INFO]: [OTP] Sent signup OTP to dinnynavis@gmail.com
+[2025-11-07 22:16:24] [INFO]: [SIGNUP] New user registered: dinnynavis@gmail.com
+[2025-11-07 22:16:36] [INFO]: [LOGIN] User logged in: dinnynavis@gmail.com
+[2025-11-07 22:34:56] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 22:34:56] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 22:34:56] [INFO]: MongoDB connected successfully
+[2025-11-07 22:36:32] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2025-11-07 22:36:32] [INFO]: [OTP] Sent signup OTP to vijaykasthuri777@gmail.com
+[2025-11-07 22:36:48] [INFO]: [SIGNUP] New user registered: vijaykasthuri777@gmail.com
+[2025-11-07 22:36:57] [INFO]: [LOGIN] User logged in: vijaykasthuri777@gmail.com
+[2025-11-07 22:37:02] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:37:02] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:37:17] [INFO]: [ADD PLANT] New plant added for user 690e2728080ad0373ccc518a: 690e2745080ad0373ccc5192
+[2025-11-07 22:37:17] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:37:46] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 22:37:46] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 22:37:46] [INFO]: MongoDB connected successfully
+[2025-11-07 22:38:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2025-11-07 22:38:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-07 22:38:03] [INFO]: ✅ Email sent successfully to cskarthikvr@gmail.com
+[2025-11-07 22:38:03] [INFO]: [EMAIL SENT] to cskarthikvr@gmail.com for Starwbeery
+[2025-11-07 22:38:14] [INFO]: [ADD PLANT] New plant added for user 690e2728080ad0373ccc518a: 690e277ebeca474c57c837e0
+[2025-11-07 22:38:14] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:38:25] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 22:38:25] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 22:38:25] [INFO]: MongoDB connected successfully
+[2025-11-07 22:39:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2025-11-07 22:39:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-07 22:39:03] [INFO]: ✅ Email sent successfully to cskarthikvr@gmail.com
+[2025-11-07 22:39:03] [INFO]: [EMAIL SENT] to cskarthikvr@gmail.com for Starwbeery
+[2025-11-07 22:39:06] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2025-11-07 22:39:06] [INFO]: [EMAIL SENT] to vijaykasthuri777@gmail.com for eufgasfb
+[2025-11-07 22:40:02] [ERROR]: ❌ Razorpay order creation failed: Cannot read properties of undefined (reading 'status')
+[2025-11-07 22:45:36] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:45:37] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:47:22] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 22:47:22] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 22:47:22] [INFO]: MongoDB connected successfully
+[2025-11-07 22:47:26] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:47:26] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:47:32] [WARN]: Auth failed: User not found for token.
+[2025-11-07 22:48:10] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 22:48:10] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 22:48:10] [INFO]: MongoDB connected successfully
+[2025-11-07 22:48:18] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:48:18] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:48:51] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:48:51] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:51:32] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:51:32] [INFO]: [GET PLANTS] Retrieved 2 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:51:37] [INFO]: [DELETE PLANT] Plant 690e277ebeca474c57c837e0 deleted for user 690e2728080ad0373ccc518a
+[2025-11-07 22:51:37] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:51:43] [INFO]: [DELETE PLANT] Plant 690e2745080ad0373ccc5192 deleted for user 690e2728080ad0373ccc518a
+[2025-11-07 22:51:43] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:52:18] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:52:18] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:52:22] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:52:22] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e2728080ad0373ccc518a
+[2025-11-07 22:54:53] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 22:54:53] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 22:54:53] [INFO]: MongoDB connected successfully
+[2025-11-07 22:55:01] [WARN]: Auth failed: User not found for token.
+[2025-11-07 22:55:32] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 22:55:32] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 22:55:32] [INFO]: MongoDB connected successfully
+[2025-11-07 23:02:10] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 23:02:11] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 23:02:11] [INFO]: MongoDB connected successfully
+[2025-11-07 23:02:20] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from vijaykasthuri777@gmail.com
+[2025-11-07 23:02:23] [INFO]: ✅ Quotation email sent successfully to vijaykasthuri777@gmail.com.
+[2025-11-07 23:04:28] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from vijaykasthuri777@gmail.com
+[2025-11-07 23:04:31] [INFO]: ✅ Quotation email sent successfully to vijaykasthuri777@gmail.com.
+[2025-11-07 23:49:34] [INFO]: ✅ MongoDB connected successfully
+[2025-11-07 23:49:34] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-07 23:49:34] [INFO]: MongoDB connected successfully
+[2025-11-08 00:00:00] [INFO]: [NODE-CRON] Running organic tip job at midnight
+[2025-11-08 00:00:00] [INFO]: [NODE-CRON] Running organic tips job
+[2025-11-08 02:32:00] [INFO]: ✅ Email sent successfully to naveenkumargowda928@gmail.com
+[2025-11-08 02:32:00] [INFO]: [OTP] Sent signup OTP to naveenkumargowda928@gmail.com
+[2025-11-08 02:32:30] [INFO]: [SIGNUP] New user registered: naveenkumargowda928@gmail.com
+[2025-11-08 02:32:39] [INFO]: [LOGIN] User logged in: naveenkumargowda928@gmail.com
+[2025-11-08 02:32:43] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 02:32:43] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 02:33:48] [INFO]: [ADD PLANT] New plant added for user 690e5e6506744a2fa35745ca: 690e5eb406744a2fa35745d2
+[2025-11-08 02:33:48] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 02:34:48] [INFO]: ✅ MongoDB connected successfully
+[2025-11-08 02:34:48] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-08 02:34:48] [INFO]: MongoDB connected successfully
+[2025-11-08 02:35:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2025-11-08 02:35:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-08 02:35:03] [INFO]: ✅ Email sent successfully to cskarthikvr@gmail.com
+[2025-11-08 02:35:03] [INFO]: [EMAIL SENT] to cskarthikvr@gmail.com for Starwbeery
+[2025-11-08 02:35:06] [INFO]: ✅ Email sent successfully to naveenkumargowda928@gmail.com
+[2025-11-08 02:35:06] [INFO]: [EMAIL SENT] to naveenkumargowda928@gmail.com for Tomoto
+[2025-11-08 02:36:19] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 02:36:19] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 02:37:18] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from naveenkumargowda928@gmail.com
+[2025-11-08 02:37:20] [INFO]: ✅ Quotation email sent successfully to naveenkumargowda928@gmail.com.
+[2025-11-08 02:38:03] [ERROR]: ❌ Razorpay order creation failed: Cannot read properties of undefined (reading 'status')
+[2025-11-08 03:55:54] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 03:55:54] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 04:38:17] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 04:38:17] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 04:38:26] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 04:38:26] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690e5e6506744a2fa35745ca
+[2025-11-08 06:30:00] [INFO]: [NODE-CRON] Running watering reminder at 06:30 (Outdoor)
+[2025-11-08 06:30:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2025-11-08 07:30:00] [INFO]: [NODE-CRON] Running watering reminder at 07:30 (Balcony)
+[2025-11-08 07:30:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Balcony
+[2025-11-08 08:22:46] [INFO]: ✅ MongoDB connected successfully
+[2025-11-08 08:22:46] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-08 08:22:46] [INFO]: MongoDB connected successfully
+[2025-11-08 08:26:06] [INFO]: ✅ Email sent successfully to abinandhanvs@gmail.com
+[2025-11-08 08:26:06] [INFO]: [OTP] Sent signup OTP to abinandhanvs@gmail.com
+[2025-11-08 08:26:35] [INFO]: [SIGNUP] New user registered: abinandhanvs@gmail.com
+[2025-11-08 08:26:42] [INFO]: [LOGIN] User logged in: abinandhanvs@gmail.com
+[2025-11-08 08:27:08] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690eb16352fd04216b1bbbe4
+[2025-11-08 08:27:08] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690eb16352fd04216b1bbbe4
+[2025-11-08 08:27:21] [INFO]: [ADD PLANT] New plant added for user 690eb16352fd04216b1bbbe4: 690eb19152fd04216b1bbbec
+[2025-11-08 08:27:21] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb16352fd04216b1bbbe4
+[2025-11-08 08:27:49] [INFO]: ✅ MongoDB connected successfully
+[2025-11-08 08:27:49] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-08 08:27:49] [INFO]: MongoDB connected successfully
+[2025-11-08 08:28:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2025-11-08 08:28:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-08 08:28:02] [INFO]: ✅ Email sent successfully to cskarthikvr@gmail.com
+[2025-11-08 08:28:02] [INFO]: [EMAIL SENT] to cskarthikvr@gmail.com for Starwbeery
+[2025-11-08 08:28:04] [INFO]: ✅ Email sent successfully to naveenkumargowda928@gmail.com
+[2025-11-08 08:28:04] [INFO]: [EMAIL SENT] to naveenkumargowda928@gmail.com for Tomoto
+[2025-11-08 08:28:07] [INFO]: ✅ Email sent successfully to abinandhanvs@gmail.com
+[2025-11-08 08:28:07] [INFO]: [EMAIL SENT] to abinandhanvs@gmail.com for scca
+[2025-11-08 08:28:24] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb16352fd04216b1bbbe4
+[2025-11-08 08:28:24] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb16352fd04216b1bbbe4
+[2025-11-08 08:29:14] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from abinandhanvs@gmail.com
+[2025-11-08 08:29:16] [INFO]: ✅ Quotation email sent successfully to abinandhanvs@gmail.com.
+[2025-11-08 08:29:20] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb16352fd04216b1bbbe4
+[2025-11-08 08:29:20] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb16352fd04216b1bbbe4
+[2025-11-08 08:34:34] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2025-11-08 08:34:34] [INFO]: [OTP] Sent signup OTP to vijaykasthuri777@gmail.com
+[2025-11-08 08:35:03] [INFO]: [SIGNUP] New user registered: vijaykasthuri777@gmail.com
+[2025-11-08 08:35:11] [INFO]: [LOGIN] User logged in: vijaykasthuri777@gmail.com
+[2025-11-08 08:35:15] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690eb35fdebe773ab5a54b86
+[2025-11-08 08:35:15] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690eb35fdebe773ab5a54b86
+[2025-11-08 08:35:31] [INFO]: [ADD PLANT] New plant added for user 690eb35fdebe773ab5a54b86: 690eb37bdebe773ab5a54b8e
+[2025-11-08 08:35:31] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb35fdebe773ab5a54b86
+[2025-11-08 08:35:51] [INFO]: ✅ MongoDB connected successfully
+[2025-11-08 08:35:51] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-08 08:35:51] [INFO]: MongoDB connected successfully
+[2025-11-08 08:36:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2025-11-08 08:36:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-08 08:36:02] [INFO]: ✅ Email sent successfully to cskarthikvr@gmail.com
+[2025-11-08 08:36:02] [INFO]: [EMAIL SENT] to cskarthikvr@gmail.com for Starwbeery
+[2025-11-08 08:36:05] [INFO]: ✅ Email sent successfully to naveenkumargowda928@gmail.com
+[2025-11-08 08:36:05] [INFO]: [EMAIL SENT] to naveenkumargowda928@gmail.com for Tomoto
+[2025-11-08 08:36:05] [WARN]: [SKIP] Missing user data for plant "scca" — userId: 690eb16352fd04216b1bbbe4
+[2025-11-08 08:36:07] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2025-11-08 08:36:07] [INFO]: [EMAIL SENT] to vijaykasthuri777@gmail.com for Tomoto
+[2025-11-08 08:37:27] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from vijaykasthuri777@gmail.com
+[2025-11-08 08:37:30] [INFO]: ✅ Quotation email sent successfully to vijaykasthuri777@gmail.com.
+[2025-11-08 10:16:32] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb35fdebe773ab5a54b86
+[2025-11-08 10:16:32] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb35fdebe773ab5a54b86
+[2025-11-08 10:16:52] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb35fdebe773ab5a54b86
+[2025-11-08 10:16:53] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690eb35fdebe773ab5a54b86
+[2025-11-08 10:58:08] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2025-11-08 10:58:08] [INFO]: [OTP] Sent signup OTP to dinnynavis@gmail.com
+[2025-11-08 10:58:24] [INFO]: [SIGNUP] New user registered: dinnynavis@gmail.com
+[2025-11-08 10:58:31] [INFO]: [LOGIN] User logged in: dinnynavis@gmail.com
+[2025-11-08 10:58:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690ed4f80006838d4ecdc47d
+[2025-11-08 10:58:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690ed4f80006838d4ecdc47d
+[2025-11-08 10:59:07] [INFO]: [ADD PLANT] New plant added for user 690ed4f80006838d4ecdc47d: 690ed5230006838d4ecdc485
+[2025-11-08 10:59:07] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690ed4f80006838d4ecdc47d
+[2025-11-08 10:59:29] [INFO]: ✅ MongoDB connected successfully
+[2025-11-08 10:59:29] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-08 10:59:29] [INFO]: MongoDB connected successfully
+[2025-11-08 11:00:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2025-11-08 11:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-08 11:00:00] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from dinnynavis@gmail.com
+[2025-11-08 11:00:02] [INFO]: ✅ Email sent successfully to cskarthikvr@gmail.com
+[2025-11-08 11:00:02] [INFO]: [EMAIL SENT] to cskarthikvr@gmail.com for Starwbeery
+[2025-11-08 11:00:03] [INFO]: ✅ Quotation email sent successfully to dinnynavis@gmail.com.
+[2025-11-08 11:00:05] [INFO]: ✅ Email sent successfully to naveenkumargowda928@gmail.com
+[2025-11-08 11:00:05] [INFO]: [EMAIL SENT] to naveenkumargowda928@gmail.com for Tomoto
+[2025-11-08 11:00:05] [WARN]: [SKIP] Missing user data for plant "scca" — userId: 690eb16352fd04216b1bbbe4
+[2025-11-08 11:00:05] [WARN]: [SKIP] Missing user data for plant "Tomoto" — userId: 690eb35fdebe773ab5a54b86
+[2025-11-08 11:00:08] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2025-11-08 11:00:08] [INFO]: [EMAIL SENT] to dinnynavis@gmail.com for Tomoto
+[2025-11-08 12:15:45] [INFO]: ✅ MongoDB connected successfully
+[2025-11-08 12:15:45] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-08 12:15:45] [INFO]: MongoDB connected successfully
+[2025-11-08 12:31:24] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690ed4f80006838d4ecdc47d
+[2025-11-08 12:31:24] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690ed4f80006838d4ecdc47d
+[2025-11-08 13:06:51] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2025-11-08 13:06:51] [INFO]: [OTP] Sent signup OTP to dinnynavis@gmail.com
+[2025-11-08 13:07:08] [INFO]: [SIGNUP] New user registered: dinnynavis@gmail.com
+[2025-11-08 13:07:14] [INFO]: [LOGIN] User logged in: dinnynavis@gmail.com
+[2025-11-08 13:07:20] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690ef3242a309bc3bb0dcced
+[2025-11-08 13:07:20] [INFO]: [GET PLANTS] Retrieved 0 plants for user 690ef3242a309bc3bb0dcced
+[2025-11-08 13:07:44] [INFO]: [ADD PLANT] New plant added for user 690ef3242a309bc3bb0dcced: 690ef3472a309bc3bb0dccf5
+[2025-11-08 13:07:44] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690ef3242a309bc3bb0dcced
+[2025-11-08 13:08:12] [INFO]: ✅ MongoDB connected successfully
+[2025-11-08 13:08:12] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-08 13:08:12] [INFO]: MongoDB connected successfully
+[2025-11-08 13:09:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2025-11-08 13:09:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2025-11-08 13:09:11] [ERROR]: Error fetching weather for
+[2025-11-08 13:09:29] [INFO]: ✅ Email sent successfully to cskarthikvr@gmail.com
+[2025-11-08 13:09:29] [INFO]: [EMAIL SENT] to cskarthikvr@gmail.com for Starwbeery
+[2025-11-08 13:09:32] [INFO]: ✅ Email sent successfully to naveenkumargowda928@gmail.com
+[2025-11-08 13:09:32] [INFO]: [EMAIL SENT] to naveenkumargowda928@gmail.com for Tomoto
+[2025-11-08 13:09:32] [WARN]: [SKIP] Missing user data for plant "scca" — userId: 690eb16352fd04216b1bbbe4
+[2025-11-08 13:09:32] [WARN]: [SKIP] Missing user data for plant "Tomoto" — userId: 690eb35fdebe773ab5a54b86
+[2025-11-08 13:09:32] [WARN]: [SKIP] Missing user data for plant "Tomoto" — userId: 690ed4f80006838d4ecdc47d
+[2025-11-08 13:09:34] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2025-11-08 13:09:34] [INFO]: [EMAIL SENT] to dinnynavis@gmail.com for Tomoto
+[2025-11-12 14:47:50] [INFO]: ✅ MongoDB connected successfully
+[2025-11-12 14:47:50] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2025-11-12 14:47:50] [INFO]: MongoDB connected successfully
+[2025-11-12 14:49:00] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690ef3242a309bc3bb0dcced
+[2025-11-12 14:49:00] [INFO]: [GET PLANTS] Retrieved 1 plants for user 690ef3242a309bc3bb0dcced
+[2026-01-25 18:03:12] [INFO]: ✅ MongoDB connected successfully
+[2026-01-25 18:03:12] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-25 18:03:42] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:33:59] [INFO]: ✅ MongoDB connected successfully
+[2026-01-25 19:33:59] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-25 19:34:29] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:36:24] [INFO]: ✅ MongoDB connected successfully
+[2026-01-25 19:36:24] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-25 19:36:54] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:38:45] [INFO]: ✅ MongoDB connected successfully
+[2026-01-25 19:38:45] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-25 19:39:15] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:42:20] [INFO]: ✅ MongoDB connected successfully
+[2026-01-25 19:42:20] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-25 19:42:50] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:45:44] [INFO]: ✅ MongoDB connected successfully
+[2026-01-25 19:45:44] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-25 19:46:14] [ERROR]: MongoDB connection error: connect ECONNREFUSED ::1:27017
+[2026-01-25 19:48:45] [INFO]: ✅ MongoDB connected successfully
+[2026-01-25 19:48:45] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-25 19:48:45] [INFO]: MongoDB connected successfully
+[2026-01-28 10:36:13] [INFO]: ✅ MongoDB connected successfully
+[2026-01-28 10:36:13] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-28 10:36:13] [INFO]: MongoDB connected successfully
+[2026-01-28 11:22:19] [WARN]: [AUTH] Invalid token: jwt expired
+[2026-01-28 11:22:19] [WARN]: [AUTH] Missing token in getPlants
+[2026-01-28 11:22:19] [WARN]: [AUTH] Invalid token: jwt expired
+[2026-01-28 11:22:19] [WARN]: [AUTH] Missing token in getPlants
+[2026-01-28 11:41:17] [INFO]: ✅ MongoDB connected successfully
+[2026-01-28 11:41:17] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-28 11:41:17] [INFO]: MongoDB connected successfully
+[2026-01-28 12:00:00] [INFO]: [NODE-CRON] Running watering reminder at 12:00 (Outdoor)
+[2026-01-28 12:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2026-01-28 12:34:02] [INFO]: ✅ MongoDB connected successfully
+[2026-01-28 12:34:02] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-28 12:34:02] [INFO]: MongoDB connected successfully
+[2026-01-28 12:37:17] [INFO]: ✅ Email sent successfully to mrimpossibleidk@gmail.com
+[2026-01-28 12:37:17] [INFO]: [RESET OTP] Sent password reset OTP to mrimpossibleidk@gmail.com
+[2026-01-28 12:38:03] [INFO]: [RESET PASSWORD] Password reset successful for mrimpossibleidk@gmail.com
+[2026-01-28 12:38:28] [INFO]: [LOGIN] User logged in: mrimpossibleidk@gmail.com
+[2026-01-28 12:41:33] [INFO]: ✅ MongoDB connected successfully
+[2026-01-28 12:41:33] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-28 12:41:33] [INFO]: MongoDB connected successfully
+[2026-01-28 12:42:04] [INFO]: [GET PLANTS] Retrieved 0 plants for user 69259dbad288a8bd2da01acc
+[2026-01-28 12:42:04] [INFO]: [GET PLANTS] Retrieved 0 plants for user 69259dbad288a8bd2da01acc
+[2026-01-28 12:42:19] [INFO]: [GET PLANTS] Retrieved 0 plants for user 69259dbad288a8bd2da01acc
+[2026-01-28 12:42:19] [INFO]: [GET PLANTS] Retrieved 0 plants for user 69259dbad288a8bd2da01acc
+[2026-01-28 12:42:31] [INFO]: Reward redemption request: Starter Succulent Seeds for mrimpossibleidk@gmail.com (300 points)
+[2026-01-28 12:42:33] [INFO]: ✅ Reward redemption email sent to mrimpossibleidk@gmail.com
+[2026-01-28 12:47:34] [INFO]: ✅ MongoDB connected successfully
+[2026-01-28 12:47:34] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-28 12:47:34] [INFO]: MongoDB connected successfully
+[2026-01-28 12:48:10] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from mrimpossibleidk@gmail.com
+[2026-01-28 12:48:35] [INFO]: ✅ Quotation email with PDF sent successfully to mrimpossibleidk@gmail.com.
+[2026-01-29 15:05:59] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 15:05:59] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 15:05:59] [INFO]: MongoDB connected successfully
+[2026-01-29 15:32:30] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 15:32:30] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 15:32:30] [INFO]: MongoDB connected successfully
+[2026-01-29 15:41:49] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 15:41:49] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 15:41:49] [INFO]: MongoDB connected successfully
+[2026-01-29 15:41:58] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-29 15:41:58] [INFO]: [OTP] Sent signup OTP to prdharanish88@gmail.com
+[2026-01-29 15:43:22] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-29 15:43:22] [INFO]: [OTP] Sent signup OTP to prdharanish88@gmail.com
+[2026-01-29 15:43:39] [INFO]: [SIGNUP] New user registered: prdharanish88@gmail.com
+[2026-01-29 15:43:46] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-29 15:47:15] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b32d3147afec71a606839
+[2026-01-29 15:47:15] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b32d3147afec71a606839
+[2026-01-29 15:47:31] [INFO]: 📩 Contact email received from amaljesmas@gmail.com by adsff
+[2026-01-29 15:47:39] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b32d3147afec71a606839
+[2026-01-29 15:47:39] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b32d3147afec71a606839
+[2026-01-29 15:50:42] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 15:50:42] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 15:50:42] [INFO]: MongoDB connected successfully
+[2026-01-29 15:50:49] [INFO]: [ADD PLANT] New plant added for user 697b32d3147afec71a606839: 697b348163beaf80d50cbf70
+[2026-01-29 15:50:49] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b32d3147afec71a606839
+[2026-01-29 15:53:47] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 15:53:47] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 15:53:47] [INFO]: MongoDB connected successfully
+[2026-01-29 15:54:12] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 15:54:12] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 15:54:12] [INFO]: MongoDB connected successfully
+[2026-01-29 15:58:18] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 15:58:18] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 15:58:18] [INFO]: MongoDB connected successfully
+[2026-01-29 15:59:31] [WARN]: [AUTH] Invalid token: jwt malformed
+[2026-01-29 15:59:31] [WARN]: [AUTH] Missing token in getPlants
+[2026-01-29 15:59:31] [WARN]: [AUTH] Invalid token: jwt malformed
+[2026-01-29 15:59:31] [WARN]: [AUTH] Missing token in getPlants
+[2026-01-29 16:00:07] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2026-01-29 16:00:07] [INFO]: [OTP] Sent signup OTP to dinnynavis@gmail.com
+[2026-01-29 16:00:25] [INFO]: [SIGNUP] New user registered: dinnynavis@gmail.com
+[2026-01-29 16:00:33] [INFO]: [LOGIN] User logged in: dinnynavis@gmail.com
+[2026-01-29 16:00:37] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:00:37] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:01:51] [INFO]: [ADD PLANT] New plant added for user 697b36c1015a4f7a38817d8a: 697b3717015a4f7a38817d96
+[2026-01-29 16:01:51] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:03:07] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 16:03:07] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 16:03:07] [INFO]: MongoDB connected successfully
+[2026-01-29 16:04:00] [INFO]: [NODE-CRON] Running watering reminder at 06:30 (Outdoor)
+[2026-01-29 16:04:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2026-01-29 16:04:02] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-29 16:04:02] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for ds
+[2026-01-29 16:04:05] [INFO]: ✅ Email sent successfully to dinnynavis@gmail.com
+[2026-01-29 16:04:05] [INFO]: [EMAIL SENT] to dinnynavis@gmail.com for tOMOTO
+[2026-01-29 16:05:06] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:05:06] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:17:03] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 16:17:03] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 16:17:03] [INFO]: MongoDB connected successfully
+[2026-01-29 16:41:53] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 16:41:53] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 16:41:53] [INFO]: MongoDB connected successfully
+[2026-01-29 16:42:31] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:42:31] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:42:38] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:42:38] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:44:21] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:44:21] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b36c1015a4f7a38817d8a
+[2026-01-29 16:44:41] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 16:44:41] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 16:44:41] [INFO]: MongoDB connected successfully
+[2026-01-29 17:32:19] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b32d3147afec71a606839
+[2026-01-29 17:32:19] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b32d3147afec71a606839
+[2026-01-29 17:56:32] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-29 17:56:32] [INFO]: [OTP] Sent signup OTP to prdharanish88@gmail.com
+[2026-01-29 17:57:27] [INFO]: [SIGNUP] New user registered: prdharanish88@gmail.com
+[2026-01-29 17:57:29] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-29 17:57:46] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 17:57:46] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:00:00] [INFO]: [NODE-CRON] Running watering reminder at 18:09 (Indoor - Evening)
+[2026-01-29 18:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2026-01-29 18:00:00] [INFO]: [NODE-CRON] Running watering reminder at 18:00 (Balcony)
+[2026-01-29 18:00:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Balcony
+[2026-01-29 18:00:50] [INFO]: 📩 Contact email received from amaljesmas@gmail.com by adsff
+[2026-01-29 18:01:10] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:01:10] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:01:43] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-29 18:12:35] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:12:35] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:17:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:17:44] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:18:14] [INFO]: [ADD PLANT] New plant added for user 697b522f7ab935fa1f6a7372: 697b570e7ab935fa1f6a7393
+[2026-01-29 18:18:14] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697b522f7ab935fa1f6a7372
+[2026-01-29 18:18:51] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 18:18:52] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 18:18:52] [INFO]: MongoDB connected successfully
+[2026-01-29 18:19:00] [INFO]: [NODE-CRON] Running watering reminder at 06:30 (Outdoor)
+[2026-01-29 18:19:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2026-01-29 18:19:00] [WARN]: [SKIP] Missing user data for plant "ds" — userId: 697b32d3147afec71a606839
+[2026-01-29 18:19:00] [WARN]: [SKIP] Missing user data for plant "tOMOTO" — userId: 697b36c1015a4f7a38817d8a
+[2026-01-29 18:19:09] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-29 18:19:09] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for Tomoto
+[2026-01-29 18:20:27] [INFO]: Quotation request received for Growlify – Smart Irrigation System (Auto Water) from prdharanish88@gmail.com
+[2026-01-29 18:20:52] [INFO]: ✅ Quotation email with PDF sent successfully to prdharanish88@gmail.com.
+[2026-01-29 18:30:00] [INFO]: [NODE-CRON] Running watering reminder at 18:30 (Outdoor)
+[2026-01-29 18:30:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Outdoor
+[2026-01-29 18:30:00] [WARN]: [SKIP] Missing user data for plant "ds" — userId: 697b32d3147afec71a606839
+[2026-01-29 18:30:00] [WARN]: [SKIP] Missing user data for plant "tOMOTO" — userId: 697b36c1015a4f7a38817d8a
+[2026-01-29 18:30:10] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-29 18:30:10] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for Tomoto
+[2026-01-29 21:44:11] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 21:44:11] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 21:44:41] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 21:59:52] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 21:59:52] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:00:22] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:02:28] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:02:28] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:02:58] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:03:51] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:03:51] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:04:21] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:05:18] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:05:18] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:05:48] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:30:58] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:30:58] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:31:28] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:32:34] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:32:34] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:33:04] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:37:02] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:37:02] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:37:32] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:49:30] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:49:30] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:50:00] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 22:57:24] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 22:57:24] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 22:57:54] [ERROR]: MongoDB connection error: connect ECONNREFUSED 127.0.0.1:27017
+[2026-01-29 23:43:38] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 23:43:38] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 23:43:38] [INFO]: MongoDB connected successfully
+[2026-01-29 23:44:07] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 23:44:07] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 23:44:07] [INFO]: MongoDB connected successfully
+[2026-01-29 23:48:49] [INFO]: ✅ MongoDB connected successfully
+[2026-01-29 23:48:49] [INFO]: 🌿 Growlify backend running on http://localhost:5000
+[2026-01-29 23:48:49] [INFO]: MongoDB connected successfully
+[2026-01-29 23:50:59] [ERROR]: ❌ Failed to send email to sudharsane23cs@psnacet.edu.in: self-signed certificate in certificate chain
+[2026-01-29 23:50:59] [INFO]: [OTP] Sent signup OTP to sudharsane23cs@psnacet.edu.in
+[2026-01-29 23:53:01] [ERROR]: ❌ Failed to send email to sudharsane23cs@psnacet.edu.in: self-signed certificate in certificate chain
+[2026-01-29 23:53:01] [INFO]: [OTP] Sent signup OTP to sudharsane23cs@psnacet.edu.in
+[2026-01-29 23:53:23] [ERROR]: ❌ Failed to send email to sudharsanelangovan2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-29 23:53:23] [INFO]: [OTP] Sent signup OTP to sudharsanelangovan2005@gmail.com
+[2026-01-29 23:55:01] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-29 23:55:01] [INFO]: [OTP] Sent signup OTP to sudharsanqp2005@gmail.com
+[2026-01-29 23:55:40] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-29 23:55:40] [INFO]: [OTP] Sent signup OTP to sudharsanqp2005@gmail.com
+[2026-01-29 23:57:18] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-29 23:57:18] [INFO]: [OTP] Sent signup OTP to sudharsanqp2005@gmail.com
+[2026-01-30 00:00:00] [INFO]: [NODE-CRON] Running organic tip job at midnight
+[2026-01-30 00:00:00] [INFO]: [NODE-CRON] Running organic tips job
+[2026-01-30 00:02:09] [ERROR]: ❌ Failed to send email to sudharsanqp2005@gmail.com: self-signed certificate in certificate chain
+[2026-01-30 00:02:09] [INFO]: [OTP] Sent signup OTP to sudharsanqp2005@gmail.com
+[2026-01-30 00:08:51] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 00:08:51] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 00:08:51] [INFO]: MongoDB connected successfully
+[2026-01-30 00:13:44] [INFO]: ✅ Email sent successfully to sudharsanqp2005@gmail.com
+[2026-01-30 00:13:44] [INFO]: [OTP] Sent signup OTP to sudharsanqp2005@gmail.com
+[2026-01-30 00:14:00] [INFO]: [SIGNUP] New user registered: sudharsanqp2005@gmail.com
+[2026-01-30 00:14:10] [INFO]: [LOGIN] User logged in: sudharsanqp2005@gmail.com
+[2026-01-30 00:14:14] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 00:14:14] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 01:26:46] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 01:26:46] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 01:31:09] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 01:31:51] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 01:43:29] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 01:48:22] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697baa7062af2f5ebb8b373b
+[2026-01-30 02:29:17] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 02:29:17] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 02:29:17] [INFO]: MongoDB connected successfully
+[2026-01-30 02:32:52] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-30 02:32:52] [INFO]: [OTP] Sent signup OTP to prdharanish88@gmail.com
+[2026-01-30 02:33:26] [INFO]: [SIGNUP] New user registered: prdharanish88@gmail.com
+[2026-01-30 02:33:30] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-30 02:35:02] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify – Smart Irrigation System (Auto Water)
+[2026-01-30 02:35:02] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:35:24] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:35:24] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:41] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:42] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:42] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:42] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:42] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:42] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:42] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:43] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:43] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:43] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:43] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:44] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:44] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:44] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:45] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:45] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:45] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:45] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:45] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:45] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:46] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:46] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:46] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:46] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:46] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:46] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:47] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:47] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:47] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:47] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:47] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:47] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:50] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:50] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:50] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:51] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:37:57] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:37:57] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:38:31] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:38:31] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:38:44] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 02:38:44] [ERROR]: ❌ Failed to submit quotation: self-signed certificate in certificate chain
+[2026-01-30 02:42:11] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 02:42:11] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 02:42:11] [INFO]: MongoDB connected successfully
+[2026-01-30 02:43:35] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify – Smart Irrigation System (Auto Water)
+[2026-01-30 02:44:06] [INFO]: ✅ Admin login successful
+[2026-01-30 02:44:19] [INFO]: ❌ Quotation declined for prdharanish88@gmail.com
+[2026-01-30 02:44:36] [INFO]: ✅ Quotation approved and PDF sent to prdharanish88@gmail.com
+[2026-01-30 02:53:36] [INFO]: ✅ Admin login successful
+[2026-01-30 02:55:25] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-30 03:04:50] [INFO]: ✅ Quotation request submitted by prdharanish88@gmail.com for Growlify Guardian – Smart Garden Protection (Auto Care)
+[2026-01-30 03:05:20] [INFO]: ✅ Admin login successful
+[2026-01-30 03:10:01] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-30 03:14:45] [INFO]: ✅ Admin login successful
+[2026-01-30 03:23:32] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-30 03:23:55] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bcb1eadab0f2f01c15f6f
+[2026-01-30 03:23:55] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bcb1eadab0f2f01c15f6f
+[2026-01-30 03:25:49] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bcb1eadab0f2f01c15f6f
+[2026-01-30 03:25:49] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bcb1eadab0f2f01c15f6f
+[2026-01-30 03:31:10] [INFO]: ✅ Admin login successful
+[2026-01-30 03:31:31] [INFO]: ✅ Quotation approved and PDF sent to prdharanish88@gmail.com
+[2026-01-30 03:42:13] [INFO]: ✅ Admin login successful
+[2026-01-30 04:30:21] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 04:30:22] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 04:30:22] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 04:30:22] [INFO]: MongoDB connected successfully
+[2026-01-30 04:30:32] [INFO]: [LOGIN] User logged in: prdharanish88@gmail.com
+[2026-01-30 04:30:48] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bcb1eadab0f2f01c15f6f
+[2026-01-30 04:30:48] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bcb1eadab0f2f01c15f6f
+[2026-01-30 04:31:11] [INFO]: [ADD PLANT] New plant added for user 697bcb1eadab0f2f01c15f6f: 697be6b75d97d3e9e7d8da3e
+[2026-01-30 04:31:11] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697bcb1eadab0f2f01c15f6f
+[2026-01-30 04:31:45] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 04:31:45] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 04:31:45] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 04:31:45] [INFO]: MongoDB connected successfully
+[2026-01-30 04:38:44] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 04:38:44] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 04:38:44] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 04:38:44] [INFO]: MongoDB connected successfully
+[2026-01-30 04:40:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2026-01-30 04:40:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2026-01-30 04:40:00] [ERROR]: ❌ Failed to send email to prdharanish88@gmail.com: self-signed certificate in certificate chain
+[2026-01-30 04:40:00] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for Tomoto
+[2026-01-30 04:41:58] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 04:41:58] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 04:41:59] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 04:41:59] [INFO]: MongoDB connected successfully
+[2026-01-30 04:42:46] [ERROR]: [SEND OTP ERROR] sendEmail is not a function
+[2026-01-30 04:46:21] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 04:46:21] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 04:46:21] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 04:46:21] [INFO]: MongoDB connected successfully
+[2026-01-30 04:51:30] [WARN]: [AUTH] Missing token
+[2026-01-30 04:51:30] [WARN]: [AUTH] Missing token in getPlants
+[2026-01-30 04:52:26] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 04:52:26] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 04:52:26] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 04:52:26] [INFO]: MongoDB connected successfully
+[2026-01-30 04:53:19] [INFO]: ✅ Email sent successfully to test@example.com
+[2026-01-30 04:53:19] [INFO]: [OTP] Sent signup OTP to test@example.com
+[2026-01-30 04:56:08] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 04:56:08] [INFO]: [OTP] Sent signup OTP to vijayvijaykas@gmail.com
+[2026-01-30 04:56:34] [INFO]: [SIGNUP] New user registered: vijayvijaykas@gmail.com
+[2026-01-30 04:56:42] [INFO]: [LOGIN] User logged in: vijayvijaykas@gmail.com
+[2026-01-30 04:56:47] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:56:47] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:56:52] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:56:52] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:58:06] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 04:58:06] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 04:58:06] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 04:58:06] [INFO]: MongoDB connected successfully
+[2026-01-30 04:59:04] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:59:04] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:59:41] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:59:41] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 04:59:57] [INFO]: Reward redemption request: Starter Succulent Seeds for vijayvijaykas@gmail.com (300 points)
+[2026-01-30 05:00:03] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:00:03] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:00:03] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 05:00:03] [INFO]: ✅ Reward redemption email sent to vijayvijaykas@gmail.com
+[2026-01-30 05:00:32] [INFO]: [ADD PLANT] New plant added for user 697becaae76b086f88c441a1: 697bed97ba742774e88abb8b
+[2026-01-30 05:00:32] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:01:27] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:01:27] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:01:27] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:01:27] [INFO]: MongoDB connected successfully
+[2026-01-30 05:02:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2026-01-30 05:02:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2026-01-30 05:02:06] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-30 05:02:06] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for Tomoto
+[2026-01-30 05:02:13] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 05:02:13] [INFO]: [EMAIL SENT] to vijayvijaykas@gmail.com for Tomoto
+[2026-01-30 05:03:03] [INFO]: ✅ Quotation request submitted by vijayvijaykas@gmail.com for Growlify – Smart Irrigation System (Auto Water)
+[2026-01-30 05:08:41] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:08:41] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:08:41] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:08:41] [INFO]: MongoDB connected successfully
+[2026-01-30 05:10:40] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:10:40] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:10:40] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:10:40] [INFO]: MongoDB connected successfully
+[2026-01-30 05:11:09] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:11:10] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:11:10] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:11:10] [INFO]: MongoDB connected successfully
+[2026-01-30 05:11:56] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:11:56] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:12:00] [INFO]: [NODE-CRON] Check for inactive users...
+[2026-01-30 05:14:02] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:14:02] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:14:02] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:14:02] [INFO]: MongoDB connected successfully
+[2026-01-30 05:15:00] [INFO]: [NODE-CRON] Check for inactive users...
+[2026-01-30 05:17:22] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:17:22] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:17:44] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 05:17:44] [INFO]: [DIAGNOSIS EMAIL] Sent to vijayvijaykas@gmail.com
+[2026-01-30 05:22:32] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:22:32] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:23:01] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:23:01] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:23:01] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:23:01] [INFO]: MongoDB connected successfully
+[2026-01-30 05:23:11] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:23:11] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:23:26] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 05:23:26] [INFO]: [DIAGNOSIS EMAIL] Sent to vijayvijaykas@gmail.com
+[2026-01-30 05:25:00] [INFO]: [NODE-CRON] Check for inactive users...
+[2026-01-30 05:25:24] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:25:24] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:25:46] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:25:46] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:25:46] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:25:46] [INFO]: MongoDB connected successfully
+[2026-01-30 05:26:19] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 05:26:19] [INFO]: [DIAGNOSIS EMAIL] Sent to vijayvijaykas@gmail.com
+[2026-01-30 05:26:38] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:26:38] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697becaae76b086f88c441a1
+[2026-01-30 05:26:49] [INFO]: 📩 Contact email received from prdharanish88@gmail.com by alien
+[2026-01-30 05:27:00] [INFO]: [NODE-CRON] Check for inactive users...
+[2026-01-30 05:27:31] [INFO]: ✅ Admin login successful
+[2026-01-30 05:27:55] [INFO]: ✅ Quotation approved and PDF sent to vijayvijaykas@gmail.com
+[2026-01-30 05:30:05] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:30:05] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:30:05] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:30:05] [INFO]: MongoDB connected successfully
+[2026-01-30 05:30:20] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2026-01-30 05:30:35] [ERROR]: Error fetching weather for
+[2026-01-30 05:30:42] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-30 05:30:42] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for Tomoto
+[2026-01-30 05:30:52] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 05:30:52] [INFO]: [EMAIL SENT] to vijayvijaykas@gmail.com for Tomoto
+[2026-01-30 05:33:02] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:33:02] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:33:02] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:33:02] [INFO]: MongoDB connected successfully
+[2026-01-30 05:34:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2026-01-30 05:34:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2026-01-30 05:34:06] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-30 05:34:06] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for Tomoto
+[2026-01-30 05:34:22] [ERROR]: Error fetching weather for
+[2026-01-30 05:35:18] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:35:19] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:35:19] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:35:19] [INFO]: MongoDB connected successfully
+[2026-01-30 05:36:22] [INFO]: ✅ Email sent successfully to prdharanish8@gmail.com
+[2026-01-30 05:36:22] [INFO]: [OTP] Sent signup OTP to prdharanish8@gmail.com
+[2026-01-30 05:37:22] [ERROR]: ❌ Failed to send email to prdharanish8@gmail.com: read ECONNRESET
+[2026-01-30 05:37:22] [INFO]: [OTP] Sent signup OTP to prdharanish8@gmail.com
+[2026-01-30 05:37:52] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2026-01-30 05:37:52] [INFO]: [OTP] Sent signup OTP to vijaykasthuri777@gmail.com
+[2026-01-30 05:38:21] [INFO]: [SIGNUP] New user registered: vijaykasthuri777@gmail.com
+[2026-01-30 05:38:29] [INFO]: [LOGIN] User logged in: vijaykasthuri777@gmail.com
+[2026-01-30 05:38:38] [INFO]: Reward redemption request: Organic Fertilizer Pro for vijaykasthuri777@gmail.com (500 points)
+[2026-01-30 05:38:44] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2026-01-30 05:38:44] [INFO]: ✅ Reward redemption email sent to vijaykasthuri777@gmail.com
+[2026-01-30 05:40:00] [INFO]: ✅ Quotation request submitted by vijaykasthuri777@gmail.com for Growlify – Smart Irrigation System (Auto Water)
+[2026-01-30 05:40:15] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bf6750662fd9da23a94e6
+[2026-01-30 05:40:15] [INFO]: [GET PLANTS] Retrieved 0 plants for user 697bf6750662fd9da23a94e6
+[2026-01-30 05:40:37] [INFO]: [ADD PLANT] New plant added for user 697bf6750662fd9da23a94e6: 697bf6fd0662fd9da23a94f7
+[2026-01-30 05:40:37] [INFO]: [GET PLANTS] Retrieved 1 plants for user 697bf6750662fd9da23a94e6
+[2026-01-30 05:42:22] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:42:22] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:42:22] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:42:22] [INFO]: MongoDB connected successfully
+[2026-01-30 05:43:00] [INFO]: [NODE-CRON] Check for inactive users...
+[2026-01-30 05:43:20] [INFO]: 📧 Email transporter initialized with user: gro...
+[2026-01-30 05:43:20] [INFO]: ✅ MongoDB connected successfully
+[2026-01-30 05:43:20] [INFO]: 🌿 Growlify backend running on http://localhost:5002
+[2026-01-30 05:43:20] [INFO]: MongoDB connected successfully
+[2026-01-30 05:44:00] [INFO]: [NODE-CRON] Running watering reminder at 08:00 (Indoor)
+[2026-01-30 05:44:00] [INFO]: [NODE-CRON] Running watering reminder job for location: Indoor
+[2026-01-30 05:44:06] [INFO]: ✅ Email sent successfully to prdharanish88@gmail.com
+[2026-01-30 05:44:06] [INFO]: [EMAIL SENT] to prdharanish88@gmail.com for Tomoto
+[2026-01-30 05:44:13] [INFO]: ✅ Email sent successfully to vijayvijaykas@gmail.com
+[2026-01-30 05:44:13] [INFO]: [EMAIL SENT] to vijayvijaykas@gmail.com for Tomoto
+[2026-01-30 05:44:19] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2026-01-30 05:44:19] [INFO]: [EMAIL SENT] to vijaykasthuri777@gmail.com for tomoto
+[2026-01-30 05:44:28] [INFO]: ✅ Email sent successfully to vijaykasthuri777@gmail.com
+[2026-01-30 05:44:28] [INFO]: [DIAGNOSIS EMAIL] Sent to vijaykasthuri777@gmail.com

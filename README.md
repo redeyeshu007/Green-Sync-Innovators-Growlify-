@@ -1,31 +1,12 @@
 # 🌱 TiForge
-
+ Project : Growlify An AI Powered Urban Farming System
 ## Team Name
 **Green Sync Innovators**
 
+
 ## College
 **PSNA College of Engineering and Technology**
-
----
-
-## 🚀 Project Overview
-TiForge is a full-stack application developed by Green Sync Innovators, combining a modern frontend, a Node.js backend, and a machine learning module to deliver an integrated and scalable solution.
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- React.js  
-- Node.js (npm)
-
-### Backend
-- Node.js  
-- Express.js  
-
-### Machine Learning
-- Python  
-
+ Project : Growlify An AI Powered Urban Farming System
 ---
 
 ## ▶️ How to Run the Project
